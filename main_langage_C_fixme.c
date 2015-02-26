@@ -34,7 +34,7 @@ int main()
 {
     //--- Message de bienvenue ---//
     printf("--- Fixme - Exercices en C ! ---");
-    SAUT_LIGNE;
+    PRINT_SAUT_LIGNE
 
     //--- structure du menu ---//
     Template_Menu_Ligne_Haut();
@@ -44,7 +44,7 @@ int main()
     printf("3/ ... \n ");
     printf("4/ ... \n ");
     printf("--- help ---");
-    SAUT_LIGNE;
+    PRINT_SAUT_LIGNE
     Help_Printf();
 
     //--- structure du menu ---//
