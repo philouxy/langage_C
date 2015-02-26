@@ -40,7 +40,7 @@ void Template_Menu_Ligne_Haut(void)
     for(i = 0; i < MAX_CARA; i++)
         printf("*");
 
-    SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
 }
 
 //----------------------------------------------------------------------------------//
@@ -59,7 +59,7 @@ void Template_Menu_Ligne_Bas(void)
     for(i = 0; i < MAX_CARA; i++)
         printf("*");
 
-    SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
 }
 
 //----------------------------------------------------------------------------------//
