@@ -1,8 +1,8 @@
 //-----------------------------------------------------------------------------------//
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
-// Date de création 	:   24.09.2013
-// Date de modification : 	06.01.2015
+// Date de création 	:   25.02.2015
+// Date de modification : 	01.03.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -60,6 +60,23 @@ void Template_Menu_Ligne_Bas(void)
         printf("*");
 
     PRINT_SAUT_LIGNE;
+}
+
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Template_Choix_Menu
+// Entrée / Sortie      : - / - /
+// Description          : affiche le choix du menu pour l'utilisateur
+// Date modfification   : le 01.03.2015
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Template_Choix_Menu(void)
+{
+    printf("1/ ... \n");
+    printf("2/ ... \n");
+    printf("3/ ... \n");
+    printf("4/ ... \n");
+    printf("--- help ---");
 }
 
 //----------------------------------------------------------------------------------//
