@@ -1,8 +1,8 @@
 //-----------------------------------------------------------------------------------//
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   main_langage_C_fixme.c
-// Date de création 	:   24.09.2013
-// Date de modification : 	06.01.2015
+// Date de création 	:   25.02.2015
+// Date de modification : 	01.03.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -28,28 +28,26 @@
 //--- Perso ---//
 #include "display.h"
 
+//--- définition ---//
+#define VERSION_PROG  1
+
 
 //--- Programme personalisé ---//
 int main()
 {
     //--- Message de bienvenue ---//
-    printf("--- Fixme - Exercices en C ! ---");
+    printf("--- Fixme - Projet en C - Version %d ---", VERSION_PROG);
     PRINT_SAUT_LIGNE
 
     //--- structure du menu ---//
     Template_Menu_Ligne_Haut();
+    Template_Choix_Menu();
 
-    printf("1/ ... \n ");
-    printf("2/ ... \n ");
-    printf("3/ ... \n ");
-    printf("4/ ... \n ");
-    printf("--- help ---");
     PRINT_SAUT_LIGNE
-    Help_Printf();
+    //Help_Printf();
 
     //--- structure du menu ---//
     Template_Menu_Ligne_Bas();
 
     return 0;
 }
-
