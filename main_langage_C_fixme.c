@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   main_langage_C_fixme.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	01.03.2015
+// Date de modification : 	23.03.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -35,19 +35,30 @@
 //--- Programme personalisé ---//
 int main()
 {
+    //--- déclaration de variables interne à la function main ---//
+    char var_retour = 0;
+
     //--- Message de bienvenue ---//
     printf("--- Fixme - Projet en C - Version %d ---", VERSION_PROG);
-    PRINT_SAUT_LIGNE
+    PRINT_SAUT_LIGNE;
 
-    //--- structure du menu ---//
-    Template_Menu_Ligne_Haut();
-    Template_Choix_Menu();
+    //--- tant que l'utilisateur n'est pas sorti en tapant sur 'E' on reste dans la boucle ---//
+    do{
+        //--- structure du menu ---//
+        Template_Menu_Ligne_Haut();
+        Template_Choix_Menu();
 
-    PRINT_SAUT_LIGNE
-    //Help_Printf();
+        PRINT_SAUT_LIGNE;
 
-    //--- structure du menu ---//
-    Template_Menu_Ligne_Bas();
+        //--- selection du menu ---//
+        PRINT_SELECTION_MENU;
+        PRINT_SAUT_LIGNE;
+
+        //--- structure du menu ---//
+        Template_Menu_Ligne_Bas();
+
+    }while(var_retour != 'E');
 
     return 0;
 }
+
