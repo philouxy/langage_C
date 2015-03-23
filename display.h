@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: display.h
 // Date de création 	: 25.02.2015
-// Date de modification : 26.02.2015
+// Date de modification : 23.03.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -23,8 +23,10 @@
 //--- librairie associée ---//
 
 //--- constante ou définition ---//
-#define MAX_CARA 80
-#define PRINT_SAUT_LIGNE printf("\n");
+#define MAX_CARA                80
+#define PRINT_SAUT_LIGNE        printf("\n")
+#define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
+#define PRINT_SELECTION_MENU    printf("Veuillez Selectionner votre Menu : ")
 
 //--- déclaration de prototype ---//
 void Template_Menu_Ligne_Haut(void);    //-> affiche un trait d'*
