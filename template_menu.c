@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	23.03.2015
+// Date de modification : 	08.04.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -25,13 +25,13 @@
 #include "display.h"
 
 //----------------------------------------------------------------------------------//
-// Nom de la fonction   : Template_Menu_Ligne_Haut
+// Nom de la fonction   : Template_Menu_Ligne
 // Entrée / Sortie      : - / - /
-// Description          : affiche la structure du menu --> partie du haut
-// Date modfification   : le 25.02.2015
+// Description          : affiche la structure du menu --> ligne remplie de '*'
+// Date modfification   : le 08.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Template_Menu_Ligne_Haut(void)
+void Template_Menu_Ligne(void)
 {
     //--- déclaration de variable interne ---//
     char i;
@@ -39,38 +39,65 @@ void Template_Menu_Ligne_Haut(void)
     //--- boucle pour afficher x caractère sur une ligne ---//
     for(i = 0; i < MAX_CARA; i++)
         printf("*");
-
-    PRINT_SAUT_LIGNE;
 }
 
 //----------------------------------------------------------------------------------//
-// Nom de la fonction   : Template_Menu_Ligne_Bas
-// Entrée / Sortie      : - / - /
-// Description          : affiche la structure du menu --> partie du haut
-// Date modfification   : le 25.02.2015
+// Nom de la fonction   : Template_Display_Menu
+// Entrée / Sortie      : choix_menu / - /
+// Description          : affiche le menu dans lequel on se situe
+// Date modfification   : le 08.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Template_Menu_Ligne_Bas(void)
+void Template_Display_Menu(char choix_menu)
 {
     //--- déclaration de variable interne ---//
     char i;
 
     //--- boucle pour afficher x caractère sur une ligne ---//
-    for(i = 0; i < MAX_CARA; i++)
+    for(i = 0; i < 3; i++)
         printf("*");
 
-    PRINT_SAUT_LIGNE;
+    //--- pour l'esthétique afficher un espace avant le mots "menu" ---/
+    PRINT_ESPACE;
+    PRINT_M_MENU;
+
+    switch(choix_menu)
+    {
+        case('P'):
+            printf("%s", NAME_M_PRINICIPAL);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            PRINT_SAUT_LIGNE;
+            Template_Choix_Menu_Principal();
+        break;
+
+        case('1'):
+            printf("%s", NAME_M_ARITHEMTIQUE);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            PRINT_SAUT_LIGNE;
+            Template_Choix_Menu_Arithmetique();
+        break;
+
+        default:
+            printf("LA SELECTION N'EXISTE PAS !!!");
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+        break;
+    }
+
 }
+
 
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Template_Choix_Menu
 // Entrée / Sortie      : - / - /
 // Description          : affiche le choix du menu pour l'utilisateur
-// Date modfification   : le 23.03.2015
+// Date modfification   : le 08.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Template_Choix_Menu(void)
+void Template_Choix_Menu_Principal(void)
 {
     //--- déclaration propre à la fonction ---//
     //char var_choix_menu;
@@ -90,13 +117,15 @@ void Template_Choix_Menu(void)
 // Nom de la fonction   : Template_Choix_Menu_Arithmetique
 // Entrée / Sortie      : - / - /
 // Description          : affiche le choix du menu arithmétique
-// Date modfification   : le 23.03.2015
+// Date modfification   : le 08.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Template_Choix_Menu_Arithmetique()
+void Template_Choix_Menu_Arithmetique(void)
 {
-    printf("Vous êtes dans le menu: %s", NAME_M_ARITHEMTIQUE);
-    PRINT_SAUT_LIGNE;
+    //Template_Menu_Ligne();
+    //Template_Display_Menu();
+    //printf("Vous êtes dans le menu: %s", NAME_M_ARITHEMTIQUE);
+    //PRINT_SAUT_LIGNE;
 
     printf("[1] ...");
     PRINT_SAUT_LIGNE;
