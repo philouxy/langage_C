@@ -1,19 +1,19 @@
 //-----------------------------------------------------------------------------------//
 // Nom du projet 		    : Langage_C_fixme
-// Nom du fichier 		  : display.h
-// Date de création 	  : 25.02.2015
-// Date de modification : 08.04.2015
+// Nom du fichier 		    : display.h
+// Date de création 	    : 25.02.2015
+// Date de modification     : 14.04.2015
 //
-// Auteur 				      : Philou (Ph. Bovey)
+// Auteur 				    : Philou (Ph. Bovey)
 //
-// Description          : fichier de type header file pour toutes les fonctions
-//                        liées à l'afficahge
+// Description              : fichier de type header file pour toutes les fonctions
+//                            liées à l'afficahge
 //
 //
-// Remarques 			: lien pour la table ASCII :
+// Remarques 			    : lien pour la table ASCII :
 // 						    -> http://www.asciitable.com/
 // 						     lien pour la saisie de clavier avec getc & getchar pour ne pas
-//                avoir des erreurs d'interprétation
+//                           avoir des erreurs d'interprétation
 // 						    -> http://fr.openclassrooms.com/informatique/cours/utiliser-les-bonnes-fonctions-d-entree
 // 						     lien vers différents
 // 						    -> http://fr.wikipedia.org/wiki/String.h
@@ -29,6 +29,7 @@
 #define PRINT_M_MENU            printf("MENU : ")
 #define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
 #define NAME_M_PRINICIPAL       "PRINCIPAL"
+#define NAME_M_ASTUCE           "ASTUCE"
 #define PRINT_SELECTION_MENU    printf("Veuillez Selectionner votre Menu : ")
 
 //--- déclaration de prototype ---//
