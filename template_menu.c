@@ -2,11 +2,12 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	14.04.2015
+// Date de modification : 	16.04.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
 // Description 			: 	Sorte de template modifiable pour afficher un menu
+//                          -> ici la partie du menu principal
 //
 // Remarques			:   lien pour la table ASCII :
 //                          http://www.asciitable.com/
@@ -45,13 +46,14 @@ void Template_Menu_Ligne(void)
 // Nom de la fonction   : Template_Display_Menu
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 14.04.2015
+// Date modfification   : le 16.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu(char choix_menu)
 {
     //--- déclaration de variable interne ---//
     char i;
+    char var_retour;
 
     //--- boucle pour afficher x caractère sur une ligne ---//
     for(i = 0; i < 3; i++)
@@ -77,6 +79,10 @@ void Template_Display_Menu(char choix_menu)
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
             Template_Choix_Menu_Arithmetique();
+            PRINT_SAUT_LIGNE;
+            PRINT_SAUT_LIGNE;
+            var_retour = Selection_Menus();
+            Template_Display_Menu_Arithm(var_retour);
         break;
 
         case('A'):
@@ -93,10 +99,7 @@ void Template_Display_Menu(char choix_menu)
             Template_Menu_Ligne();
         break;
     }
-
 }
-
-
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Template_Choix_Menu
@@ -122,27 +125,6 @@ void Template_Choix_Menu_Principal(void)
 
     //return
 }
-
-//----------------------------------------------------------------------------------//
-// Nom de la fonction   : Template_Choix_Menu_Arithmetique
-// Entrée / Sortie      : - / - /
-// Description          : affiche le choix du menu arithmétique
-// Date modfification   : le 14.04.2015
-// Remarque             : -
-//----------------------------------------------------------------------------------//
-void Template_Choix_Menu_Arithmetique(void)
-{
-    printf("[1] ...");
-    PRINT_SAUT_LIGNE;
-    printf("[2] ... \n");
-    printf("[3] ... \n");
-    printf("[4] ... \n");
-    printf("[Q] --- help ---\n");
-    printf("[E] --- fermer le programme ---");
-}
-
-
-
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Help_Printf
