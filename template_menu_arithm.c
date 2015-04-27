@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	xx.xx.2015
+// Date de modification : 	27.04.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -24,6 +24,7 @@
 
 //--- librairie perso ---//
 #include "display.h"
+#include "arithmetique.h"
 
 
 //----------------------------------------------------------------------------------//
@@ -49,7 +50,7 @@ void Template_Choix_Menu_Arithmetique(void)
 // Nom de la fonction   : Template_Choix_Menu_OP_Simple
 // Entrée / Sortie      : - / - /
 // Description          : affiche le choix du menu des opération arithmétique simple
-// Date modfification   : le 16.04.2015
+// Date modfification   : le 21.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Choix_Menu_OP_Simple(void)
@@ -62,6 +63,8 @@ void Template_Choix_Menu_OP_Simple(void)
     PRINT_SAUT_LIGNE;
     printf("[4] %s", NAME_M_DIVISION);
     PRINT_SAUT_LIGNE;
+    printf("[A] %s", NAME_M_ASTUCE);
+    PRINT_SAUT_LIGNE;
     printf("[P] --- retour menu %s  ---", NAME_M_PRINICIPAL);
     PRINT_SAUT_LIGNE;
     printf("[E] --- fermer le programme ---");
@@ -71,13 +74,17 @@ void Template_Choix_Menu_OP_Simple(void)
 // Nom de la fonction   : Template_Display_Menu_Arithm
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 16.04.2015
+// Date modfification   : le 27.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_Arithm(char choix_menu)
 {
     //--- déclaration de variable interne ---//
-    char i;
+    char i, var_retour;
+
+    //--- affiche une ligne entière d'étoile ---//
+    PRINT_SAUT_LIGNE;
+    Template_Menu_Ligne();
 
     //--- boucle pour afficher x caractère sur une ligne ---//
     for(i = 0; i < 3; i++)
@@ -103,6 +110,12 @@ void Template_Display_Menu_Arithm(char choix_menu)
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
             Template_Choix_Menu_OP_Simple();
+            PRINT_SAUT_LIGNE;
+            PRINT_SAUT_LIGNE;
+            var_retour = Selection_Menus();
+            Template_Display_Menu_OP_Simple(var_retour);
+            PRINT_SAUT_LIGNE;
+            PRINT_SAUT_LIGNE;
         break;
 
         case('A'):
@@ -110,7 +123,7 @@ void Template_Display_Menu_Arithm(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            Help_Printf();
+            Help_Printf();;
         break;
 
         default:
@@ -134,6 +147,10 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
 {
     //--- déclaration de variable interne ---//
     char i;
+
+    //--- affiche une ligne entière d'étoile ---//
+    PRINT_SAUT_LIGNE;
+    Template_Menu_Ligne();
 
     //--- boucle pour afficher x caractère sur une ligne ---//
     for(i = 0; i < 3; i++)
@@ -168,6 +185,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
         break;
 
         case('3'):
+            Template_Menu_Ligne();
             printf("%s", NAME_M_MULTIPLICATION);
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
@@ -186,7 +204,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            Help_Printf();
+            Astuce_Calcul();
         break;
 
         default:
