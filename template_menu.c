@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	16.04.2015
+// Date de modification : 	27.04.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -46,7 +46,7 @@ void Template_Menu_Ligne(void)
 // Nom de la fonction   : Template_Display_Menu
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 16.04.2015
+// Date modfification   : le 27.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu(char choix_menu)
@@ -83,6 +83,7 @@ void Template_Display_Menu(char choix_menu)
             PRINT_SAUT_LIGNE;
             var_retour = Selection_Menus();
             Template_Display_Menu_Arithm(var_retour);
+            PRINT_SAUT_LIGNE;
         break;
 
         case('A'):
