@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : xx.04.2015
+// Date de modification : 27.04.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -23,6 +23,7 @@
 
 //--- déclaration de prototype ---//
 int pemier_calcul(int val_x);
+void Astuce_Calcul(void);                   //-> affiche des exemples d'incrémentation
 
 
 #endif // ARITHMETIQUE_H_INCLUDED
