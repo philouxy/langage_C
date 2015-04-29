@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : xx.04.2015
+// Date de modification : 29.04.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -27,18 +27,34 @@
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Selection_Menus
-// Entrée / Sortie      : - / -
-// Description          : affiche un message pour que lutilisateur entre une valeur
-// modification         : le 16.04.2014
+// Entrée / Sortie      : choix_selection_msg / -
+// Description          : affiche un message pour que l'utilisateur entre une valeur
+//                        M : affichage d'un message concernant un menu
+//                        C : affichage d'un message concernant un choix de sous menu
+//                        V : affichage d'un message concernant une valeur
+// modification         : le 29.04.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-char Selection_Menus(void)
+char Selection_Menus(char choix_selection_msg)
 {
     //--- declaration de variable local ---//
     char var_retour;
 
-    //--- selection du menu par le user ---//
-    PRINT_SELECTION_MENU;
+    //--- selection du message selon la configuration ---//
+    switch(choix_selection_msg)
+    {
+        case 'M':
+            PRINT_SELECTION_MENU;
+        break;
+
+        case 'C':
+            PRINT_SELECTION_CHOIX;
+        break;
+
+        case 'V':
+            PRINT_SELECTION_NB;
+        break;
+    }
 
     //--- lire le caractère saisi ---//
     var_retour = getchar();
@@ -48,4 +64,3 @@ char Selection_Menus(void)
 
     return var_retour;
 }
-
