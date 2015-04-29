@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   main_langage_C_fixme.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	08.04.2015
+// Date de modification : 	16.04.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -49,16 +49,7 @@ int main()
         Template_Display_Menu(var_retour);
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-
-        //--- selection du menu par le user ---//
-        PRINT_SELECTION_MENU;
-
-        //--- lire le caractère saisi ---//
-        var_retour = getchar();
-
-        //--- vide le buffer de saisie de clavier ---//
-        while(getchar() != '\n');
-
+        var_retour = Selection_Menus();
         PRINT_SAUT_LIGNE;
 
     }while(var_retour != 'E');

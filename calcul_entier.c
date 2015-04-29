@@ -2,12 +2,12 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : xx.04.2015
+// Date de modification : 29.04.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
-// Description : fichier comportant différentes fonctions arithmetiques avec des
-//               éléments entiers
+// Description          : fichier comportant différentes fonctions arithmetiques avec des
+//                        éléments entiers
 //
 // Remarques :            lien pour la table ASCII :
 // 						  -> http://www.asciitable.com/
@@ -23,6 +23,41 @@
 
 //--- librairie perso ---//
 #include "arithmetique.h"
+#include "display.h"
+
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Astuce_Calcul
+// Entrée / Sortie      : - / - / -
+// Description          : montre différent mode d'affichage avec le mode d
+//                        incrémentation
+// modification         : le 29.04.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Astuce_Calcul(void)
+{
+    //--- déclaration de variable interne ---//
+    char val_exemple;
+
+    //--- demander à l'utilisateur de taper un nombre ---//
+    //PRINT_SELECTION_NB;
+
+    //--- récuperation de la valeur ---//
+    val_exemple = Selection_Menus('V');
+
+    //--- transformation de la valeur type char en decimal ---//
+    val_exemple -= NB_CONV_CHAR_VIA_DEC;
+
+    //--- incrémentation ---//
+    printf("\n\npost incrementation - phenomene \n x = %d", val_exemple);             //12
+    printf("\n x++ = %d => x = %d", val_exemple++, val_exemple);                            //12 --> 13
+    printf("\npre incrementation - phenomene \n x = %d", val_exemple);                //13
+    printf("\n --x = %d => x = %d ", --val_exemple, val_exemple);                           //12 --> 12
+    printf("\nincrementation - phenomene \n x++ = %d", val_exemple++);                //12
+    printf("\nincrementation - phenomene \n x = x++ = %d", val_exemple = val_exemple++);    //13
+    printf("\n x = %d", val_exemple);                                                 //14
+
+}
 
 
 
