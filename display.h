@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 16.04.2015
+// Date de modification     : 29.04.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -29,6 +29,8 @@
 #define PRINT_ESPACE            printf(" ")
 #define PRINT_M_MENU            printf("MENU : ")
 #define PRINT_SELECTION_MENU    printf("Veuillez Selectionner votre Menu : ")
+#define PRINT_SELECTION_CHOIX   printf("Veuillez Selectionner votre choix : ")
+#define PRINT_SELECTION_NB      printf("Indiquer un nombre : ")
 
 #define NAME_M_ADITION          "ADITION"
 #define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
@@ -56,7 +58,7 @@ void Template_Choix_Menu_OP_Simple(void);               //-> affiche le menu op�
 void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu concernant les oérations simples
 
 //--- liée au fichier selection_user.c ---//
-char Selection_Menus(void);                             //-> permet de récuprer une valeur entrer par l'utilisateur
+char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
 
 
 #endif // DISPLAY_H_INCLUDED
