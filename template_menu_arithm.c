@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	27.04.2015
+// Date de modification : 	29.04.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -74,7 +74,7 @@ void Template_Choix_Menu_OP_Simple(void)
 // Nom de la fonction   : Template_Display_Menu_Arithm
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 27.04.2015
+// Date modfification   : le 29.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_Arithm(char choix_menu)
@@ -112,7 +112,7 @@ void Template_Display_Menu_Arithm(char choix_menu)
             Template_Choix_Menu_OP_Simple();
             PRINT_SAUT_LIGNE;
             PRINT_SAUT_LIGNE;
-            var_retour = Selection_Menus();
+            var_retour = Selection_Menus('C');
             Template_Display_Menu_OP_Simple(var_retour);
             PRINT_SAUT_LIGNE;
             PRINT_SAUT_LIGNE;
