@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 29.04.2015
+// Date de modification : 04.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -31,7 +31,7 @@
 // Entrée / Sortie      : - / - / -
 // Description          : montre différent mode d'affichage avec le mode d
 //                        incrémentation
-// modification         : le 29.04.2014
+// modification         : le 04.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Astuce_Calcul(void)
@@ -46,7 +46,7 @@ void Astuce_Calcul(void)
     val_exemple = Selection_Menus('V');
 
     //--- transformation de la valeur type char en decimal ---//
-    val_exemple -= NB_CONV_CHAR_VIA_DEC;
+    //val_exemple -= NB_CONV_CHAR_VIA_DEC;
 
     //--- incrémentation ---//
     printf("\n\npost incrementation - phenomene \n x = %d", val_exemple);             //12
