@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 29.04.2015
+// Date de modification     : 04.05.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -51,6 +51,7 @@ void Template_Display_Menu(char choix_menu);            //-> affiche le titre da
 void Template_Choix_Menu_Principal(void);               //-> affiche le menu principal pour le user
 void Help_Printf(void);                                 //-> affiche une aide sur le printf
 
+
 //--- liée au fichier template_menu_arithm.c ---//
 void Template_Display_Menu_Arithm(char choix_menu);     //-> affiche le titre dans lequel se trouve le user et sélectionne le menu choisi
 void Template_Choix_Menu_Arithmetique(void);            //-> affiche le menu arithmetique
@@ -59,6 +60,8 @@ void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu con
 
 //--- liée au fichier selection_user.c ---//
 char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
+char Select_Var_Cara(void);                             //-> récupère un caractère fournis par un utilisateur
+int Select_Var_Entier(void);                            //-> récupère une châine de chaîne de caractère et le transforme en entier
 
 
 #endif // DISPLAY_H_INCLUDED
