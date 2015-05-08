@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 04.05.2015
+// Date de modification : 08.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -30,8 +30,8 @@
 // Nom de la fonction   : Astuce_Calcul
 // Entrée / Sortie      : - / - / -
 // Description          : montre différent mode d'affichage avec le mode d
-//                        incrémentation
-// modification         : le 04.05.2014
+//                        incrémentation et decrementation
+// modification         : le 08.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Astuce_Calcul(void)
@@ -39,24 +39,43 @@ void Astuce_Calcul(void)
     //--- déclaration de variable interne ---//
     char val_exemple;
 
-    //--- demander à l'utilisateur de taper un nombre ---//
-    //PRINT_SELECTION_NB;
-
     //--- récuperation de la valeur ---//
     val_exemple = Selection_Menus('V');
 
-    //--- transformation de la valeur type char en decimal ---//
-    //val_exemple -= NB_CONV_CHAR_VIA_DEC;
-
     //--- incrémentation ---//
-    printf("\n\npost incrementation - phenomene \n x = %d", val_exemple);             //12
-    printf("\n x++ = %d => x = %d", val_exemple++, val_exemple);                            //12 --> 13
-    printf("\npre incrementation - phenomene \n x = %d", val_exemple);                //13
-    printf("\n --x = %d => x = %d ", --val_exemple, val_exemple);                           //12 --> 12
-    printf("\nincrementation - phenomene \n x++ = %d", val_exemple++);                //12
-    printf("\nincrementation - phenomene \n x = x++ = %d", val_exemple = val_exemple++);    //13
-    printf("\n x = %d", val_exemple);                                                 //14
-
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    Template_Menu_Ligne();
+    printf("--- PHENOMENE D'INCREMENTATION ET DE DECREMENTATION ---");
+    PRINT_SAUT_LIGNE;
+    Template_Menu_Ligne();
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("-> NB = %d ", val_exemple);
+    PRINT_SAUT_LIGNE;
+    printf("-> NB++ = %d ", val_exemple++);
+    printf(" la valeur ne change pas !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> Rappel NB = %d ", val_exemple);
+    printf(" la valeur a change cette fois, on parle de post incrementation !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> NB-- = %d ", val_exemple--);
+    printf(" la valeur ne change pas !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> Rappel NB = %d ", val_exemple);
+    printf(" la valeur a change cette fois, on parle de post decrementation !!!");
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("-> NB = %d", val_exemple);
+    PRINT_SAUT_LIGNE;
+    printf("-> ++NB = %d ", ++val_exemple);
+    printf(" la valeur change directement, on parle de pre incrementation !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> --NB = %d ", --val_exemple);
+    printf(" la valeur change directement, on parle de pre decrementation !!!");
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("Valeur Initialee = %d", val_exemple);
 }
 
 
@@ -80,14 +99,6 @@ int pemier_calcul(int val_x)
     int var_int_y = 3;
     int res_int;
 
-    //--- incrémentation ---//
-    printf("\n\npost incrementation - phenomene \n x = %d", val_x);             //12
-    printf("\n x++ = %d => x = %d", val_x++, val_x);                            //12 --> 13
-    printf("\npre incrementation - phenomene \n x = %d", val_x);                //13
-    printf("\n --x = %d => x = %d ", --val_x, val_x);                           //12 --> 12
-    printf("\nincrementation - phenomene \n x++ = %d", val_x++);                //12
-    printf("\nincrementation - phenomene \n x = x++ = %d", val_x = val_x++);    //13
-    printf("\n x = %d", val_x);                                                 //14
 
     //--- afficher plusieurs opération arithmétique simple en mode raccoucis ---//
     printf("\n\naddition entre x et y      : %d",var_int_x += var_int_y);         // afficher 4
