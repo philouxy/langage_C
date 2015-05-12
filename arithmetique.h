@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : 04.05.2015
+// Date de modification : 12.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -27,6 +27,7 @@
 //--- déclaration de prototype ---//
 //--- fonctions liées au fichier : calcul_entier.c ---//
 void Astuce_Calcul(void);                   //-> affiche des exemples d'incrémentation
+void Addition(char choix_option);           //-> affiche une addition pour le user (entier ou flottant)
 
 int pemier_calcul(int val_x);
 
