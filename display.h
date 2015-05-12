@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 04.05.2015
+// Date de modification     : 12.05.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -24,6 +24,8 @@
 
 //--- constante ou définition ---//
 #define MAX_CARA                80
+#define CHOIX_ENTIER            73          // représente I en caractère
+#define CHOIX_FLOTTANT          70          // représente F en caractère
 
 #define PRINT_SAUT_LIGNE        printf("\n")
 #define PRINT_ESPACE            printf(" ")
@@ -31,6 +33,8 @@
 #define PRINT_SELECTION_MENU    printf("Veuillez Selectionner votre Menu : ")
 #define PRINT_SELECTION_CHOIX   printf("Veuillez Selectionner votre choix : ")
 #define PRINT_SELECTION_NB      printf("Indiquer un nombre : ")
+#define PRINT_SELECTION_INT     printf("Voulez-vous travailler en entier   - taper 'I' ");
+#define PRINT_SELECTION_FLOAT   printf("Voulez-vous travailler en flottant - taper 'F' ");
 
 #define NAME_M_ADITION          "ADITION"
 #define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
@@ -62,6 +66,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu con
 char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
 char Select_Var_Cara(void);                             //-> récupère un caractère fournis par un utilisateur
 int Select_Var_Entier(void);                            //-> récupère une châine de chaîne de caractère et le transforme en entier
+char Select_Option(void);                               //-> permet à l'utilisteur de choisir entre deux options
 
 
 #endif // DISPLAY_H_INCLUDED
