@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 08.05.2015
+// Date de modification : 12.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -78,6 +78,36 @@ void Astuce_Calcul(void)
     printf("Valeur Initialee = %d", val_exemple);
 }
 
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Addition
+// Entrée / Sortie      : choix_option / - / -
+// Description          : montre différent mode d'affichage avec le mode d
+//                        incrémentation et decrementation
+// modification         : le 12.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Addition(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        PRINT_SELECTION_NB;
+        var1 = Select_Var_Entier();
+        PRINT_SELECTION_NB;
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("L'adition vaut X + Y  = %d + %d = %d",var1, var2, (var1 + var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
 
 
 //----------------------------------------------------------------------------------//
@@ -98,7 +128,6 @@ int pemier_calcul(int val_x)
     int var_int_x = 1;
     int var_int_y = 3;
     int res_int;
-
 
     //--- afficher plusieurs opération arithmétique simple en mode raccoucis ---//
     printf("\n\naddition entre x et y      : %d",var_int_x += var_int_y);         // afficher 4
