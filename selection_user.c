@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : 04.05.2015
+// Date de modification : 12.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -24,6 +24,9 @@
 
 //--- librairie perso ---//
 #include "display.h"
+
+//--- constante ou définition ---//
+
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Selection_Menus
@@ -85,6 +88,43 @@ char Select_Var_Cara(void)
 }
 
 //----------------------------------------------------------------------------------//
+// Nom de la fonction   : Select_Option
+// Entrée / Sortie      : - / car_retour
+// Description          : demande à l'utilisateur de choisir un choix
+//                        en entier
+// modification         : le 12.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+char Select_Option(void)
+{
+    //--- déclaration de variable interne ---//
+    char car_retour;
+
+    //--- boucle pour choisir un choix d'option
+    do
+    {
+        //--- message afficher à l'utilisateur ---//
+        PRINT_SELECTION_INT;
+        PRINT_SAUT_LIGNE;
+        printf("OU");
+        PRINT_SAUT_LIGNE;
+        PRINT_SELECTION_FLOAT;
+        PRINT_SAUT_LIGNE;
+
+        //--- demander à l'utilisetur de choisir une option ---//
+        PRINT_SELECTION_CHOIX;
+
+        //--- lecture du caractère en retour ---//
+        car_retour = Select_Var_Cara();
+
+    //---condition de sortie : obliger de choisir une possibilité ---//
+    }while((car_retour != CHOIX_ENTIER) || (car_retour != CHOIX_FLOTTANT));
+
+    return car_retour;
+}
+
+
+//----------------------------------------------------------------------------------//
 // Nom de la fonction   : Select_Var_Entier
 // Entrée / Sortie      : - / val_retour
 // Description          : récuperation d'une chaîne de caractère en la transformant
@@ -102,6 +142,3 @@ int Select_Var_Entier(void)
 
     return val_retour;
 }
-
-
-
