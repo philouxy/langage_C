@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : 12.05.2015
+// Date de modification : 19.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -92,8 +92,8 @@ char Select_Var_Cara(void)
 // Entrée / Sortie      : - / car_retour
 // Description          : demande à l'utilisateur de choisir un choix
 //                        en entier
-// modification         : le 12.05.2014
-// Remarque             : -
+// modification         : le 19.05.2014
+// Remarque             : http://fr.wikipedia.org/wiki/Lois_de_De_Morgan
 //----------------------------------------------------------------------------------//
 char Select_Option(void)
 {
@@ -110,6 +110,7 @@ char Select_Option(void)
         PRINT_SAUT_LIGNE;
         PRINT_SELECTION_FLOAT;
         PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
 
         //--- demander à l'utilisetur de choisir une option ---//
         PRINT_SELECTION_CHOIX;
@@ -117,8 +118,9 @@ char Select_Option(void)
         //--- lecture du caractère en retour ---//
         car_retour = Select_Var_Cara();
 
-    //---condition de sortie : obliger de choisir une possibilité ---//
-    }while((car_retour != CHOIX_ENTIER) || (car_retour != CHOIX_FLOTTANT));
+    //---condition de sortie : obliger de choisir une de deux possibilités ---//
+    }//while((car_retour != CHOIX_ENTIER) && (car_retour != CHOIX_FLOTTANT));    // les deux solutions sont justes
+    while(!((car_retour == CHOIX_ENTIER) || (car_retour == CHOIX_FLOTTANT)));
 
     return car_retour;
 }
@@ -142,3 +144,6 @@ int Select_Var_Entier(void)
 
     return val_retour;
 }
+
+
+
