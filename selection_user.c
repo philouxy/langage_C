@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : 19.05.2015
+// Date de modification : 21.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -131,13 +131,16 @@ char Select_Option(void)
 // Entrée / Sortie      : - / val_retour
 // Description          : récuperation d'une chaîne de caractère en la transformant
 //                        en entier
-// modification         : le 04.05.2014
+// modification         : le 21.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 int Select_Var_Entier(void)
 {
     //--- déclaration de variable interne ---//
     int val_retour;
+
+    //--- message de sélection ---//
+    PRINT_SELECTION_NB;
 
     //--- fonction pour la lire la saisie d'un chaîne de caractère ---//
     scanf("%d", &val_retour);
