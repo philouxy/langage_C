@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 12.05.2015
+// Date de modification : 21.05.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -81,9 +81,8 @@ void Astuce_Calcul(void)
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Addition
 // Entrée / Sortie      : choix_option / - / -
-// Description          : montre différent mode d'affichage avec le mode d
-//                        incrémentation et decrementation
-// modification         : le 12.05.2014
+// Description          : Addition de deux variables
+// modification         : le 21.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Addition(char choix_option)
@@ -94,9 +93,7 @@ void Addition(char choix_option)
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
     {
-        PRINT_SELECTION_NB;
         var1 = Select_Var_Entier();
-        PRINT_SELECTION_NB;
         var2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
@@ -108,6 +105,102 @@ void Addition(char choix_option)
         printf("!!! PAS ENCORE IMPLEMENTER !!!");
     }
 }
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Soustraction
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Soustraction de deux variable
+// modification         : le 21.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Soustraction(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var1 = Select_Var_Entier();
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("L'adition vaut X - Y  = %d - %d = %d",var1, var2, (var1 - var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Multiplication
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Multiplication de deux variables
+// modification         : le 21.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Multiplication(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var1 = Select_Var_Entier();
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("L'adition vaut X * Y  = %d * %d = %d",var1, var2, (var1 * var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Division
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Division de deux variables
+// modification         : le 21.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Division(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var1 = Select_Var_Entier();
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("L'adition vaut X / Y  = %d / %d = %d",var1, var2, (var1 / var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //----------------------------------------------------------------------------------//
