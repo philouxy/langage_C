@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 12.05.2015
+// Date de modification     : 08.06.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -65,8 +65,9 @@ void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu con
 //--- liée au fichier selection_user.c ---//
 char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
 char Select_Var_Cara(void);                             //-> récupère un caractère fournis par un utilisateur
-int Select_Var_Entier(void);                            //-> récupère une châine de chaîne de caractère et le transforme en entier
 char Select_Option(void);                               //-> permet à l'utilisteur de choisir entre deux options
+int Select_Var_Entier(void);                            //-> récupère une châine de chaîne de caractère et le transforme en entier
+int Select_Var_Flottant(void);                          //-> récupère une chaine de caractère et la transforme en floattant
 
 
 #endif // DISPLAY_H_INCLUDED
