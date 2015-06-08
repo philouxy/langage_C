@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : 21.05.2015
+// Date de modification : 08.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -35,7 +35,7 @@
 //                        M : affichage d'un message concernant un menu
 //                        C : affichage d'un message concernant un choix de sous menu
 //                        V : affichage d'un message concernant une valeur
-// modification         : le 04.04.2014
+// modification         : le 04.04.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 char Selection_Menus(char choix_selection_msg)
@@ -70,7 +70,7 @@ char Selection_Menus(char choix_selection_msg)
 // Entrée / Sortie      : - / val_retour
 // Description          : récuperation d'un caractère issu d'un utilisateur
 //                        en entier
-// modification         : le 04.05.2014
+// modification         : le 04.05.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 char Select_Var_Cara(void)
@@ -92,7 +92,7 @@ char Select_Var_Cara(void)
 // Entrée / Sortie      : - / car_retour
 // Description          : demande à l'utilisateur de choisir un choix
 //                        en entier
-// modification         : le 19.05.2014
+// modification         : le 19.05.2015
 // Remarque             : http://fr.wikipedia.org/wiki/Lois_de_De_Morgan
 //----------------------------------------------------------------------------------//
 char Select_Option(void)
@@ -125,13 +125,12 @@ char Select_Option(void)
     return car_retour;
 }
 
-
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Select_Var_Entier
 // Entrée / Sortie      : - / val_retour
 // Description          : récuperation d'une chaîne de caractère en la transformant
 //                        en entier
-// modification         : le 21.05.2014
+// modification         : le 21.05.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 int Select_Var_Entier(void)
@@ -148,5 +147,24 @@ int Select_Var_Entier(void)
     return val_retour;
 }
 
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Select_Var_Flottant
+// Entrée / Sortie      : - / val_retour
+// Description          : récuperation d'une chaîne de caractère en la transformant
+//                        en flottant
+// modification         : le 08.06.2015
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+int Select_Var_Flottant(void)
+{
+    //--- déclaration de variable interne ---//
+    float val_retour;
 
+    //--- message de sélection ---//
+    PRINT_SELECTION_NB;
 
+    //--- fonction pour la lire la saisie d'un chaîne de caractère ---//
+    scanf("%f", &val_retour);
+
+    return val_retour;
+}
