@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 21.05.2015
+// Date de modification : 08.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -82,27 +82,31 @@ void Astuce_Calcul(void)
 // Nom de la fonction   : Addition
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Addition de deux variables
-// modification         : le 21.05.2014
+// modification         : le 08.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Addition(char choix_option)
 {
     //--- déclaration de variables ---//
-    int var1, var2;
+    int     var_i_1, var_i_2;
+    float   var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
     {
-        var1 = Select_Var_Entier();
-        var2 = Select_Var_Entier();
+        var_i_1 = Select_Var_Entier();
+        var_i_2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("L'adition vaut X + Y  = %d + %d = %d",var1, var2, (var1 + var2));
+        printf("L'adition entiere vaut X + Y  = %d + %d = %d",var_i_1, var_i_2, (var_i_1 + var_i_2));
     }
     else
     {
+        var_f_1 = Select_Var_Flottant();
+        var_f_2 = Select_Var_Flottant();
         PRINT_SAUT_LIGNE;
-        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+        PRINT_SAUT_LIGNE;
+        printf("L'adition flottant vaut X + Y  = %f + %f = %f",var_f_1, var_f_2, (var_f_1 + var_f_2));
     }
 }
 
@@ -110,7 +114,7 @@ void Addition(char choix_option)
 // Nom de la fonction   : Soustraction
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Soustraction de deux variable
-// modification         : le 21.05.2014
+// modification         : le 25.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Soustraction(char choix_option)
@@ -125,7 +129,7 @@ void Soustraction(char choix_option)
         var2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("L'adition vaut X - Y  = %d - %d = %d",var1, var2, (var1 - var2));
+        printf("La soustraction vaut X - Y  = %d - %d = %d",var1, var2, (var1 - var2));
     }
     else
     {
@@ -138,7 +142,7 @@ void Soustraction(char choix_option)
 // Nom de la fonction   : Multiplication
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Multiplication de deux variables
-// modification         : le 21.05.2014
+// modification         : le 25.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Multiplication(char choix_option)
@@ -153,7 +157,7 @@ void Multiplication(char choix_option)
         var2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("L'adition vaut X * Y  = %d * %d = %d",var1, var2, (var1 * var2));
+        printf("La multiplication vaut X * Y  = %d * %d = %d",var1, var2, (var1 * var2));
     }
     else
     {
@@ -166,7 +170,7 @@ void Multiplication(char choix_option)
 // Nom de la fonction   : Division
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Division de deux variables
-// modification         : le 21.05.2014
+// modification         : le 25.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Division(char choix_option)
@@ -181,7 +185,7 @@ void Division(char choix_option)
         var2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("L'adition vaut X / Y  = %d / %d = %d",var1, var2, (var1 / var2));
+        printf("La division vaut X / Y  = %d / %d = %d",var1, var2, (var1 / var2));
     }
     else
     {
