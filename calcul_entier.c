@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 29.04.2015
+// Date de modification : 08.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -30,8 +30,8 @@
 // Nom de la fonction   : Astuce_Calcul
 // Entrée / Sortie      : - / - / -
 // Description          : montre différent mode d'affichage avec le mode d
-//                        incrémentation
-// modification         : le 29.04.2014
+//                        incrémentation et decrementation
+// modification         : le 08.05.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Astuce_Calcul(void)
@@ -39,25 +39,171 @@ void Astuce_Calcul(void)
     //--- déclaration de variable interne ---//
     char val_exemple;
 
-    //--- demander à l'utilisateur de taper un nombre ---//
-    //PRINT_SELECTION_NB;
-
     //--- récuperation de la valeur ---//
     val_exemple = Selection_Menus('V');
 
-    //--- transformation de la valeur type char en decimal ---//
-    val_exemple -= NB_CONV_CHAR_VIA_DEC;
-
     //--- incrémentation ---//
-    printf("\n\npost incrementation - phenomene \n x = %d", val_exemple);             //12
-    printf("\n x++ = %d => x = %d", val_exemple++, val_exemple);                            //12 --> 13
-    printf("\npre incrementation - phenomene \n x = %d", val_exemple);                //13
-    printf("\n --x = %d => x = %d ", --val_exemple, val_exemple);                           //12 --> 12
-    printf("\nincrementation - phenomene \n x++ = %d", val_exemple++);                //12
-    printf("\nincrementation - phenomene \n x = x++ = %d", val_exemple = val_exemple++);    //13
-    printf("\n x = %d", val_exemple);                                                 //14
-
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    Template_Menu_Ligne();
+    printf("--- PHENOMENE D'INCREMENTATION ET DE DECREMENTATION ---");
+    PRINT_SAUT_LIGNE;
+    Template_Menu_Ligne();
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("-> NB = %d ", val_exemple);
+    PRINT_SAUT_LIGNE;
+    printf("-> NB++ = %d ", val_exemple++);
+    printf(" la valeur ne change pas !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> Rappel NB = %d ", val_exemple);
+    printf(" la valeur a change cette fois, on parle de post incrementation !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> NB-- = %d ", val_exemple--);
+    printf(" la valeur ne change pas !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> Rappel NB = %d ", val_exemple);
+    printf(" la valeur a change cette fois, on parle de post decrementation !!!");
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("-> NB = %d", val_exemple);
+    PRINT_SAUT_LIGNE;
+    printf("-> ++NB = %d ", ++val_exemple);
+    printf(" la valeur change directement, on parle de pre incrementation !!!");
+    PRINT_SAUT_LIGNE;
+    printf("-> --NB = %d ", --val_exemple);
+    printf(" la valeur change directement, on parle de pre decrementation !!!");
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("Valeur Initialee = %d", val_exemple);
 }
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Addition
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Addition de deux variables
+// modification         : le 08.06.2015
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Addition(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int     var_i_1, var_i_2;
+    float   var_f_1, var_f_2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var_i_1 = Select_Var_Entier();
+        var_i_2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("L'adition entiere vaut X + Y  = %d + %d = %d",var_i_1, var_i_2, (var_i_1 + var_i_2));
+    }
+    else
+    {
+        var_f_1 = Select_Var_Flottant();
+        var_f_2 = Select_Var_Flottant();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("L'adition flottant vaut X + Y  = %f + %f = %f",var_f_1, var_f_2, (var_f_1 + var_f_2));
+    }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Soustraction
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Soustraction de deux variable
+// modification         : le 25.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Soustraction(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var1 = Select_Var_Entier();
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("La soustraction vaut X - Y  = %d - %d = %d",var1, var2, (var1 - var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Multiplication
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Multiplication de deux variables
+// modification         : le 25.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Multiplication(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var1 = Select_Var_Entier();
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("La multiplication vaut X * Y  = %d * %d = %d",var1, var2, (var1 * var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Division
+// Entrée / Sortie      : choix_option / - / -
+// Description          : Division de deux variables
+// modification         : le 25.05.2014
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Division(char choix_option)
+{
+    //--- déclaration de variables ---//
+    int var1, var2;
+
+    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
+    if(choix_option == CHOIX_ENTIER)
+    {
+        var1 = Select_Var_Entier();
+        var2 = Select_Var_Entier();
+        PRINT_SAUT_LIGNE;
+        PRINT_SAUT_LIGNE;
+        printf("La division vaut X / Y  = %d / %d = %d",var1, var2, (var1 / var2));
+    }
+    else
+    {
+        PRINT_SAUT_LIGNE;
+        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,15 +225,6 @@ int pemier_calcul(int val_x)
     int var_int_x = 1;
     int var_int_y = 3;
     int res_int;
-
-    //--- incrémentation ---//
-    printf("\n\npost incrementation - phenomene \n x = %d", val_x);             //12
-    printf("\n x++ = %d => x = %d", val_x++, val_x);                            //12 --> 13
-    printf("\npre incrementation - phenomene \n x = %d", val_x);                //13
-    printf("\n --x = %d => x = %d ", --val_x, val_x);                           //12 --> 12
-    printf("\nincrementation - phenomene \n x++ = %d", val_x++);                //12
-    printf("\nincrementation - phenomene \n x = x++ = %d", val_x = val_x++);    //13
-    printf("\n x = %d", val_x);                                                 //14
 
     //--- afficher plusieurs opération arithmétique simple en mode raccoucis ---//
     printf("\n\naddition entre x et y      : %d",var_int_x += var_int_y);         // afficher 4

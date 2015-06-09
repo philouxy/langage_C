@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	29.04.2015
+// Date de modification : 	21.05.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -140,13 +140,13 @@ void Template_Display_Menu_Arithm(char choix_menu)
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe avec les
 //                        differentes options
-// Date modfification   : le 16.04.2015
+// Date modfification   : le 21.05.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_OP_Simple(char choix_menu)
 {
     //--- déclaration de variable interne ---//
-    char i;
+    char i, choix_option;
 
     //--- affiche une ligne entière d'étoile ---//
     PRINT_SAUT_LIGNE;
@@ -175,6 +175,8 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
+            choix_option = Select_Option();
+            Addition(choix_option);
         break;
 
         case('2'):
@@ -182,14 +184,17 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
+            choix_option = Select_Option();
+            Soustraction(choix_option);
         break;
 
         case('3'):
-            Template_Menu_Ligne();
             printf("%s", NAME_M_MULTIPLICATION);
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
+            choix_option = Select_Option();
+            Multiplication(choix_option);
         break;
 
         case('4'):
@@ -197,6 +202,8 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
+            choix_option = Select_Option();
+            Division(choix_option);
         break;
 
         case('A'):
