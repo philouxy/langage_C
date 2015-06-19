@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	29.04.2015
+// Date de modification : 	17.06.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -46,7 +46,7 @@ void Template_Menu_Ligne(void)
 // Nom de la fonction   : Template_Display_Menu
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 29.04.2015
+// Date modfification   : le 17.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu(char choix_menu)
@@ -87,7 +87,7 @@ void Template_Display_Menu(char choix_menu)
         break;
 
         case('A'):
-            printf("%s", NAME_M_ASTUCE);
+            printf("%s", NAME_M_ASTUCE_PRINTF);
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
@@ -106,7 +106,7 @@ void Template_Display_Menu(char choix_menu)
 // Nom de la fonction   : Template_Choix_Menu
 // Entrée / Sortie      : - / - /
 // Description          : affiche le choix du menu pour l'utilisateur
-// Date modfification   : le 14.04.2015
+// Date modfification   : le 17.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Choix_Menu_Principal(void)
@@ -119,7 +119,7 @@ void Template_Choix_Menu_Principal(void)
     printf("[2] ... \n");
     printf("[3] ... \n");
     printf("[4] ... \n");
-    printf("[A] --- %s ---", NAME_M_ASTUCE);
+    printf("[A] --- %s ---", NAME_M_ASTUCE_PRINTF);
     PRINT_SAUT_LIGNE;
     printf("[Q] --- help ---\n");
     printf("[E] --- fermer le programme ---");
@@ -131,19 +131,37 @@ void Template_Choix_Menu_Principal(void)
 // Nom de la fonction   : Help_Printf
 // Entrée / Sortie      : - / - /
 // Description          : on affiche quelques régles avec le printf
-// Date modfification   : le 14.04.2015
+// Date modfification   : le 17.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Help_Printf(void)
 {
+    //--- déclaration de variable interne ---//
+    char var_test = 'A';
+    float var_test2 = 3452.10;
+
     //--- Notion du "Printf" --> permet l'affichage dans une console ---//
-    printf("-> le printf : permet d'afficher du texte dans une console \n");
+    printf("-> fct ""PRINTF()"" : permet d'afficher du texte dans une console \n");
     printf("-> le \\n permet un retour a la ligne \n");
-    printf("-> pour afficher un entier on utilise %%d \n   pour afficher une valeur en hexa %%x \n");
-    printf("-> pour un nombe a virgule on utilise %%f \n   et pour notation scientifique on utilise %%E \n");
+    printf("-> pour afficher un caractere on utilise %%c \n");
+    printf("-> pour afficher un entier on utilise %%d \n");
+    printf("-> pour afficher une valeur en hexa on utilise %%x \n");
+    PRINT_SAUT_LIGNE;
+    printf("=> Exemple 1A : la variable de test a comme caractere : %c \n", var_test);
+    printf("=> Exemple 1B : la variable de test vaut en decimal : %d \n", var_test);
+    printf("=> Exemple 1C : la variable de test vaut en hexa : OX%x \n", var_test);
+    PRINT_SAUT_LIGNE;
+    printf("-> pour afficher un nombre flottant on utilise %%f \n");
+    printf("-> pour afficher un nombre en notation scientifique on utilise %%e \n");
+    printf("REMARQUE : ecriture notation scientifique %%nb_total.Nb_ap_virgule => ex: %%3.1e");
+    PRINT_SAUT_LIGNE;
+    printf("=> Exemple 2A : la variable de test vaut : %f \n", var_test2);
+    printf("=> Exemple 2B : la variable de test vaut en notation scientifique : %3.1e \n", var_test2);
+    PRINT_SAUT_LIGNE;
+
     printf("-> pour aligner des nombres entier %%min.max \n   definit les nb de caractere + un signe - devant le ");
     printf("   permet d'aligner a gauche \n");
     printf("-> pour des nombres flottants %%car_total.chiffre_A_virgf \n   définit les caracteres totaux a afficer");
     printf("   le nombre apres la virgule ");
-    printf("-> et pour afficher un caractere %%c \n\n");
+
 }
