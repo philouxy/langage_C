@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : 08.06.2015
+// Date de modification : 19.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -35,7 +35,7 @@
 //                        M : affichage d'un message concernant un menu
 //                        C : affichage d'un message concernant un choix de sous menu
 //                        V : affichage d'un message concernant une valeur
-// modification         : le 04.04.2015
+// modification         : le 19.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 char Selection_Menus(char choix_selection_msg)
@@ -57,7 +57,6 @@ char Selection_Menus(char choix_selection_msg)
         break;
 
         case 'V':
-            PRINT_SELECTION_NB;
             var_retour = Select_Var_Entier();
         break;
     }
@@ -155,7 +154,7 @@ int Select_Var_Entier(void)
 // modification         : le 08.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-int Select_Var_Flottant(void)
+float Select_Var_Flottant(void)
 {
     //--- déclaration de variable interne ---//
     float val_retour;
