@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 17.06.2015
+// Date de modification     : 19.06.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -31,14 +31,18 @@
 #define PRINT_ESPACE            printf(" ")
 #define PRINT_M_MENU            printf("MENU : ")
 #define PRINT_SELECTION_MENU    printf("Veuillez Selectionner votre Menu : ")
+#define PRINT_SELECTION_CHAR    printf("Veuillez taper un caractere :")
 #define PRINT_SELECTION_CHOIX   printf("Veuillez Selectionner votre choix : ")
 #define PRINT_SELECTION_NB      printf("Indiquer un nombre : ")
-#define PRINT_SELECTION_INT     printf("Voulez-vous travailler en entier   - taper 'I' ");
-#define PRINT_SELECTION_FLOAT   printf("Voulez-vous travailler en flottant - taper 'F' ");
+#define PRINT_SELECTION_INT     printf("Voulez-vous travailler en entier   - taper 'I' ")
+#define PRINT_SELECTION_FLOAT   printf("Voulez-vous travailler en flottant - taper 'F' ")
 
 #define NAME_M_ADITION          "ADITION"
 #define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
 #define NAME_M_ASTUCE_PRINTF    "ASTUCE PRINTF"
+#define NAME_M_ASTUCE_INCR      "ASTUCE INCREMENTATION & DECREMENTATION"
+#define NAME_M_CONV             "CONVERSIONS"
+#define NAME_M_CONV_CHAR_NUM    "CONVERSION CARACTERE EN NUM (DEC - HEXA)"
 #define NAME_M_DIVISION         "DIVISION"
 #define NAME_M_MULTIPLICATION   "MULTIPLICATION"
 #define NAME_M_OP_SIMPLE        "OPERATION SIMPLE"
@@ -60,13 +64,15 @@ void Help_Printf(void);                                 //-> affiche une aide su
 void Template_Display_Menu_Arithm(char choix_menu);     //-> affiche le titre dans lequel se trouve le user et sélectionne le menu choisi
 void Template_Choix_Menu_Arithmetique(void);            //-> affiche le menu arithmetique
 void Template_Choix_Menu_OP_Simple(void);               //-> affiche le menu opération simple
+void Template_Choix_Menu_Conversion(void);              //-> affiche le menu Conversion
 void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu concernant les oérations simples
+void Template_Display_Menu_Conversion(char choix_menu); //-> affiche le menu concernant différentes conversions
 
 //--- liée au fichier selection_user.c ---//
 char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
 char Select_Var_Cara(void);                             //-> récupère un caractère fournis par un utilisateur
 char Select_Option(void);                               //-> permet à l'utilisteur de choisir entre deux options
-float Select_Var_Flottant(void);                          //-> récupère une chaine de caractère et la transforme en floattant
+float Select_Var_Flottant(void);                        //-> récupère une chaine de caractère et la transforme en floattant
 int Select_Var_Entier(void);                            //-> récupère une châine de chaîne de caractère et le transforme en entier
 
 
