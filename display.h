@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 08.06.2015
+// Date de modification     : 17.06.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -38,7 +38,7 @@
 
 #define NAME_M_ADITION          "ADITION"
 #define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
-#define NAME_M_ASTUCE           "ASTUCE"
+#define NAME_M_ASTUCE_PRINTF    "ASTUCE PRINTF"
 #define NAME_M_DIVISION         "DIVISION"
 #define NAME_M_MULTIPLICATION   "MULTIPLICATION"
 #define NAME_M_OP_SIMPLE        "OPERATION SIMPLE"
@@ -66,8 +66,9 @@ void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu con
 char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
 char Select_Var_Cara(void);                             //-> récupère un caractère fournis par un utilisateur
 char Select_Option(void);                               //-> permet à l'utilisteur de choisir entre deux options
+float Select_Var_Flottant(void);                          //-> récupère une chaine de caractère et la transforme en floattant
 int Select_Var_Entier(void);                            //-> récupère une châine de chaîne de caractère et le transforme en entier
-int Select_Var_Flottant(void);                          //-> récupère une chaine de caractère et la transforme en floattant
+
 
 
 #endif // DISPLAY_H_INCLUDED
