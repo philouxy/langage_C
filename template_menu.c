@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	17.06.2015
+// Date de modification : 	19.06.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -131,7 +131,7 @@ void Template_Choix_Menu_Principal(void)
 // Nom de la fonction   : Help_Printf
 // Entrée / Sortie      : - / - /
 // Description          : on affiche quelques régles avec le printf
-// Date modfification   : le 17.06.2015
+// Date modfification   : le 19.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Help_Printf(void)
@@ -153,7 +153,8 @@ void Help_Printf(void)
     PRINT_SAUT_LIGNE;
     printf("-> pour afficher un nombre flottant on utilise %%f \n");
     printf("-> pour afficher un nombre en notation scientifique on utilise %%e \n");
-    printf("REMARQUE : ecriture notation scientifique %%nb_total.Nb_ap_virgule => ex: %%3.1e");
+    PRINT_SAUT_LIGNE;
+    printf("REMARQUE : ecriture notation scientifique %%nb_total.Nb_ap_virgule => ex: %%3.1e \n");
     PRINT_SAUT_LIGNE;
     printf("=> Exemple 2A : la variable de test vaut : %f \n", var_test2);
     printf("=> Exemple 2B : la variable de test vaut en notation scientifique : %3.1e \n", var_test2);
