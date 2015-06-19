@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : 21.05.2015
+// Date de modification : 19.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -34,5 +34,7 @@ void Division(char choix_option);           //-> affiche la division de deux nom
 
 int pemier_calcul(int val_x);
 
-#endif // ARITHMETIQUE_H_INCLUDED
+//--- fonctions liées au fichier : conversions.c ---//
+void Conv_Char_Num(char var_char);          //-> converti un caractère en valeur numérique
 
+#endif // ARITHMETIQUE_H_INCLUDED
