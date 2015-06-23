@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	19.06.2015
+// Date de modification : 	23.06.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -82,8 +82,10 @@ void Template_Choix_Menu_Conversion(void)
 {
     printf("[1] %s", NAME_M_CONV_CHAR_NUM);
     PRINT_SAUT_LIGNE;
-    printf("[2] ... \n");
-    printf("[2] ... \n");
+    printf("[2] %s", NAME_M_CONV_NUM_CHAR);
+    PRINT_SAUT_LIGNE;
+    printf("[3] ... \n");
+    printf("[4] ... \n");
     printf("[P] --- retour menu %s  ---", NAME_M_PRINICIPAL);
     PRINT_SAUT_LIGNE;
     printf("[E] --- fermer le programme ---");
@@ -262,13 +264,15 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe avec les
 //                        differentes options -> ici menu de conversions
-// Date modfification   : le 19.06.2015
+// Date modfification   : le 23.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_Conversion(char choix_menu)
 {
     //--- déclaration de variable interne ---//
     char i, choix_char;
+
+    int choix_int;
 
     //--- affiche une ligne entière d'étoile ---//
     PRINT_SAUT_LIGNE;
@@ -292,6 +296,15 @@ void Template_Display_Menu_Conversion(char choix_menu)
             PRINT_SELECTION_CHAR;
             choix_char = Select_Var_Cara();
             Conv_Char_Num(choix_char);
+        break;
+
+        case('2'):
+            printf("%s", NAME_M_CONV_NUM_CHAR);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            PRINT_SAUT_LIGNE;
+            choix_int = Select_Var_Entier();
+            Conv_Num_Char(choix_int);
         break;
 
 
