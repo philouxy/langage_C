@@ -21,9 +21,11 @@
 #define ARITHMETIQUE_H_INCLUDED
 
 //--- constante ou définition ---//
-#define NB_CONV_CHAR_VIA_DEC  48
-#define SAUT_MAJ_MIN          32          // différence entre les caractères majuscule et minuscule -><-
-#define NB_ALPHABETE          24          //
+#define CHAR_RETOUR_CHARIOT     '\n'      // caractère spécial représentant un retour de ligne
+#define DEBUT_CHAR              65        // correspond a la lettre 'A'
+#define NB_ALPHABETE            24        // nombre de caractère dans l'alphabet
+#define DEBUT_NUM               48        // correspond au caractère '0'
+#define SAUT_MAJ_MIN            32        // différence entre les caractères majuscule et minuscule -><-
 
 
 //--- déclaration de prototype ---//
