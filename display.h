@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 23.06.2015
+// Date de modification     : 08.07.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -37,18 +37,19 @@
 #define PRINT_SELECTION_INT     printf("Voulez-vous travailler en entier   - taper 'I' ")
 #define PRINT_SELECTION_FLOAT   printf("Voulez-vous travailler en flottant - taper 'F' ")
 
-#define NAME_M_ADITION          "ADITION"
-#define NAME_M_ARITHEMTIQUE     "ARITHMETIQUE"
-#define NAME_M_ASTUCE_PRINTF    "ASTUCE PRINTF"
-#define NAME_M_ASTUCE_INCR      "ASTUCE INCREMENTATION & DECREMENTATION"
-#define NAME_M_CONV             "CONVERSIONS"
-#define NAME_M_CONV_CHAR_NUM    "CONVERSION CARACTERE EN NUM (DEC - HEXA)"
-#define NAME_M_CONV_NUM_CHAR    "CONVERSION NUMERIQUE EN CARACTERE"
-#define NAME_M_DIVISION         "DIVISION"
-#define NAME_M_MULTIPLICATION   "MULTIPLICATION"
-#define NAME_M_OP_SIMPLE        "OPERATION SIMPLE"
-#define NAME_M_PRINICIPAL       "PRINCIPAL"
-#define NAME_M_SOUSTRACTION     "SOUSTRACTION"
+#define NAME_M_ADITION              "ADITION"
+#define NAME_M_ARITHEMTIQUE         "ARITHMETIQUE"
+#define NAME_M_ASTUCE_PRINTF        "ASTUCE PRINTF"
+#define NAME_M_ASTUCE_INCR          "ASTUCE INCREMENTATION & DECREMENTATION"
+#define NAME_M_ASTUCE_CONV_CHAR_NUM "ASTUCE CONVERSION CARACTERE NUMERIQUE - TABLE"
+#define NAME_M_CONV                 "CONVERSIONS"
+#define NAME_M_CONV_CHAR_NUM        "CONVERSION CARACTERE EN NUM (DEC - HEXA)"
+#define NAME_M_CONV_NUM_CHAR        "CONVERSION NUMERIQUE EN CARACTERE"
+#define NAME_M_DIVISION             "DIVISION"
+#define NAME_M_MULTIPLICATION       "MULTIPLICATION"
+#define NAME_M_OP_SIMPLE            "OPERATION SIMPLE"
+#define NAME_M_PRINICIPAL           "PRINCIPAL"
+#define NAME_M_SOUSTRACTION         "SOUSTRACTION"
 
 //--- déclaration de variable global ---//
 extern char var_retour;
