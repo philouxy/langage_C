@@ -31,12 +31,16 @@
 // Entrée / Sortie      : var_char / - / -
 // Description          : avec le choix de l'utilisateur sélectionnant un caractètre
 //                        la fonction affiche sa valeur decimale et hexa
-// modification         : le 29.06.2014
+// modification         : le 08.07.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Conv_Char_Num(char var_char)
 {
-    printf("le caractere selectionne est '%c'", var_char);
+    if(var_char < DEBUT_NUM)
+        printf("le caractere selectionne est sepacial", var_char);
+    else
+        printf("le caractere selectionne est '%c'", var_char);
+
     PRINT_SAUT_LIGNE;
     printf("conv en hexa : 0X%x", var_char);
     PRINT_SAUT_LIGNE;
@@ -74,20 +78,28 @@ void Astuce_ASCII(void)
     //--- déclaration de variable ---//
     char i;                         // utiliser pour l'incrémentation
     char fin_num = 57;              // correspond au caractère '9'
-    char debut_alpha_maj = 65;      // correspond au caractère 'A'
-    char saut_maj_min = 32;         // différente numérqiue entre 'A' et 'a'
 
     //--- affiche les valeurs correspondant aux chiffres 0 à 9 ---//
-    for(i = NB_CONV_CHAR_VIA_DEC; i < fin_num + 1; i++)
+    for(i = DEBUT_NUM; i < fin_num + 1; i++)
     {
         Conv_Char_Num(i);
         PRINT_SAUT_LIGNE;
     }
 
     //--- affichage des valeurs correspondants au caractère de l'alpahabet en majuscule et minuscule ---//
-        for(i = NB_CONV_CHAR_VIA_DEC; i < fin_num + 1; i++)
+    for(i = DEBUT_CHAR; i < DEBUT_CHAR + NB_ALPHABETE; i++)
     {
+        //--- Partie Majuscule ---//
         Conv_Char_Num(i);
         PRINT_SAUT_LIGNE;
+
+        //--- Partie Minsucle ---//
+        Conv_Char_Num(i + SAUT_MAJ_MIN);
+        PRINT_SAUT_LIGNE;
     }
+
+    //--- affichage de valeur de certains caractère spéciaux ---//
+    Conv_Char_Num(CHAR_RETOUR_CHARIOT);     // retiour chariot
+    PRINT_SAUT_LIGNE;
 }
+
