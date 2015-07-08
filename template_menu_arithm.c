@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	23.06.2015
+// Date de modification : 	08.07.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -75,7 +75,7 @@ void Template_Choix_Menu_OP_Simple(void)
 // Nom de la fonction   : Template_Choix_Menu_Conversion
 // Entrée / Sortie      : - / - /
 // Description          : affiche le choix du menu des opération arithmétique simple
-// Date modfification   : le 19.06.2015
+// Date modfification   : le 08.07.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Choix_Menu_Conversion(void)
@@ -86,6 +86,8 @@ void Template_Choix_Menu_Conversion(void)
     PRINT_SAUT_LIGNE;
     printf("[3] ... \n");
     printf("[4] ... \n");
+    printf("[A] %s", NAME_M_ASTUCE_CONV_CHAR_NUM);
+    PRINT_SAUT_LIGNE;
     printf("[P] --- retour menu %s  ---", NAME_M_PRINICIPAL);
     PRINT_SAUT_LIGNE;
     printf("[E] --- fermer le programme ---");
@@ -264,7 +266,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe avec les
 //                        differentes options -> ici menu de conversions
-// Date modfification   : le 23.06.2015
+// Date modfification   : le 08.07.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_Conversion(char choix_menu)
@@ -305,6 +307,13 @@ void Template_Display_Menu_Conversion(char choix_menu)
             PRINT_SAUT_LIGNE;
             choix_int = Select_Var_Entier();
             Conv_Num_Char(choix_int);
+        break;
+
+        case('A'):
+            printf("%s", NAME_M_ASTUCE_CONV_CHAR_NUM);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            Astuce_ASCII();
         break;
 
 
