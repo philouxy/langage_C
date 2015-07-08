@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : 23.06.2015
+// Date de modification : 08.07.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -22,6 +22,8 @@
 
 //--- constante ou définition ---//
 #define NB_CONV_CHAR_VIA_DEC  48
+#define SAUT_MAJ_MIN          32          // différence entre les caractères majuscule et minuscule -><-
+#define NB_ALPHABETE          24          //
 
 
 //--- déclaration de prototype ---//
@@ -37,5 +39,6 @@ int pemier_calcul(int val_x);
 //--- fonctions liées au fichier : conversions.c ---//
 void Conv_Char_Num(char var_char);          //-> converti un caractère en valeur numérique
 void Conv_Num_Char(int var_int);            //-> converti un nombre en caractère
+void Astuce_ASCII(void);                    //-> montre toutes les valeurs des caractères
 
 #endif // ARITHMETIQUE_H_INCLUDED
