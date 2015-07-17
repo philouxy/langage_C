@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 08.06.2015
+// Date de modification : 19.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -31,7 +31,7 @@
 // Entrée / Sortie      : - / - / -
 // Description          : montre différent mode d'affichage avec le mode d
 //                        incrémentation et decrementation
-// modification         : le 08.05.2014
+// modification         : le 19.06.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Astuce_Calcul(void)
@@ -43,12 +43,6 @@ void Astuce_Calcul(void)
     val_exemple = Selection_Menus('V');
 
     //--- incrémentation ---//
-    PRINT_SAUT_LIGNE;
-    PRINT_SAUT_LIGNE;
-    Template_Menu_Ligne();
-    printf("--- PHENOMENE D'INCREMENTATION ET DE DECREMENTATION ---");
-    PRINT_SAUT_LIGNE;
-    Template_Menu_Ligne();
     PRINT_SAUT_LIGNE;
     PRINT_SAUT_LIGNE;
     printf("-> NB = %d ", val_exemple);
@@ -82,7 +76,7 @@ void Astuce_Calcul(void)
 // Nom de la fonction   : Addition
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Addition de deux variables
-// modification         : le 08.06.2015
+// modification         : le 19.06.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Addition(char choix_option)
@@ -107,6 +101,8 @@ void Addition(char choix_option)
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
         printf("L'adition flottant vaut X + Y  = %f + %f = %f",var_f_1, var_f_2, (var_f_1 + var_f_2));
+        PRINT_SAUT_LIGNE;
+        printf("en notation scientifique : X + Y  = %4.1e + %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 + var_f_2));
     }
 }
 
@@ -114,13 +110,14 @@ void Addition(char choix_option)
 // Nom de la fonction   : Soustraction
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Soustraction de deux variable
-// modification         : le 25.05.2014
+// modification         : le 19.06.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Soustraction(char choix_option)
 {
     //--- déclaration de variables ---//
-    int var1, var2;
+    int   var1, var2;
+    float var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
@@ -133,8 +130,13 @@ void Soustraction(char choix_option)
     }
     else
     {
+        var_f_1 = Select_Var_Flottant();
+        var_f_2 = Select_Var_Flottant();
         PRINT_SAUT_LIGNE;
-        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+        PRINT_SAUT_LIGNE;
+        printf("La soustraction en flottant vaut X - Y  = %f - %f = %f",var_f_1, var_f_2, (var_f_1 - var_f_2));
+        PRINT_SAUT_LIGNE;
+        printf("en notation scientifique : X - Y  = %4.1e - %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 - var_f_2));
     }
 }
 
@@ -142,13 +144,14 @@ void Soustraction(char choix_option)
 // Nom de la fonction   : Multiplication
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Multiplication de deux variables
-// modification         : le 25.05.2014
+// modification         : le 19.06.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Multiplication(char choix_option)
 {
     //--- déclaration de variables ---//
-    int var1, var2;
+    int   var1, var2;
+    float var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
@@ -161,8 +164,13 @@ void Multiplication(char choix_option)
     }
     else
     {
+        var_f_1 = Select_Var_Flottant();
+        var_f_2 = Select_Var_Flottant();
         PRINT_SAUT_LIGNE;
-        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+        PRINT_SAUT_LIGNE;
+        printf("La multiplication flottant vaut X * Y  = %f * %f = %f",var_f_1, var_f_2, (var_f_1 * var_f_2));
+        PRINT_SAUT_LIGNE;
+        printf("en notation scientifique : X * Y  = %4.1e * %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 * var_f_2));
     }
 }
 
@@ -170,13 +178,14 @@ void Multiplication(char choix_option)
 // Nom de la fonction   : Division
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Division de deux variables
-// modification         : le 25.05.2014
+// modification         : le 19.06.2014
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Division(char choix_option)
 {
     //--- déclaration de variables ---//
-    int var1, var2;
+    int     var1, var2;
+    float   var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
@@ -189,8 +198,13 @@ void Division(char choix_option)
     }
     else
     {
+        var_f_1 = Select_Var_Flottant();
+        var_f_2 = Select_Var_Flottant();
         PRINT_SAUT_LIGNE;
-        printf("!!! PAS ENCORE IMPLEMENTER !!!");
+        PRINT_SAUT_LIGNE;
+        printf("La divsion vaut X / Y  = %f / %f = %f",var_f_1, var_f_2, (var_f_1 / var_f_2));
+        PRINT_SAUT_LIGNE;
+        printf("en notation scientifique : X / Y  = %4.1e / %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 / var_f_2));
     }
 }
 

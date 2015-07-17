@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : 21.05.2015
+// Date de modification : 08.07.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -21,7 +21,11 @@
 #define ARITHMETIQUE_H_INCLUDED
 
 //--- constante ou définition ---//
-#define NB_CONV_CHAR_VIA_DEC  48
+#define CHAR_RETOUR_CHARIOT     '\n'      // caractère spécial représentant un retour de ligne
+#define DEBUT_CHAR              65        // correspond a la lettre 'A'
+#define NB_ALPHABETE            24        // nombre de caractère dans l'alphabet
+#define DEBUT_NUM               48        // correspond au caractère '0'
+#define SAUT_MAJ_MIN            32        // différence entre les caractères majuscule et minuscule -><-
 
 
 //--- déclaration de prototype ---//
@@ -34,5 +38,9 @@ void Division(char choix_option);           //-> affiche la division de deux nom
 
 int pemier_calcul(int val_x);
 
-#endif // ARITHMETIQUE_H_INCLUDED
+//--- fonctions liées au fichier : conversions.c ---//
+void Conv_Char_Num(char var_char);          //-> converti un caractère en valeur numérique
+void Conv_Num_Char(int var_int);            //-> converti un nombre en caractère
+void Astuce_ASCII(void);                    //-> montre toutes les valeurs des caractères
 
+#endif // ARITHMETIQUE_H_INCLUDED
