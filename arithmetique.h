@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : 08.07.06.2015
+// Date de modification : 19.08.06.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -41,6 +41,7 @@ int pemier_calcul(int val_x);
 //--- fonctions liées au fichier : conversions.c ---//
 void Conv_Char_Num(char var_char);          //-> converti un caractère en valeur numérique
 void Conv_Num_Char(int var_int);            //-> converti un nombre en caractère
+void Conv_Num_Oct_Hex(int var_int);         //-> converti un nombre en octal et en hexa
 void Astuce_ASCII(void);                    //-> montre toutes les valeurs des caractères
 
 #endif // ARITHMETIQUE_H_INCLUDED
