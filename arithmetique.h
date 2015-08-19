@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: arithmetique.h
 // Date de création 	: 09.04.2015
-// Date de modification : 19.08.06.2015
+// Date de modification : 19.08.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
