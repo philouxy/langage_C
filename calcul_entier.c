@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 19.06.2015
+// Date de modification : 03.09.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -76,7 +76,7 @@ void Astuce_Calcul(void)
 // Nom de la fonction   : Addition
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Addition de deux variables
-// modification         : le 19.06.2015
+// modification         : le 03.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Addition(char choix_option)
@@ -93,6 +93,9 @@ void Addition(char choix_option)
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
         printf("L'adition entiere vaut X + Y  = %d + %d = %d",var_i_1, var_i_2, (var_i_1 + var_i_2));
+        PRINT_SAUT_LIGNE;
+        printf("la meme addition => X += Y ou X = X + Y: %d",var_i_1 += var_i_2);
+        PRINT_SAUT_LIGNE;
     }
     else
     {
@@ -110,23 +113,26 @@ void Addition(char choix_option)
 // Nom de la fonction   : Soustraction
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Soustraction de deux variable
-// modification         : le 19.06.2014
+// modification         : le 03.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Soustraction(char choix_option)
 {
     //--- déclaration de variables ---//
-    int   var1, var2;
+    int   var_i_1, var_i_2;
     float var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
     {
-        var1 = Select_Var_Entier();
-        var2 = Select_Var_Entier();
+        var_i_1 = Select_Var_Entier();
+        var_i_2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("La soustraction vaut X - Y  = %d - %d = %d",var1, var2, (var1 - var2));
+        printf("La soustraction vaut X - Y  = %d - %d = %d",var_i_1, var_i_2, (var_i_1 - var_i_2));
+        PRINT_SAUT_LIGNE;
+        printf("la meme soustraction => X -= Y ou X = X - Y: %d",var_i_1 -= var_i_2);
+        PRINT_SAUT_LIGNE;
     }
     else
     {
@@ -144,23 +150,26 @@ void Soustraction(char choix_option)
 // Nom de la fonction   : Multiplication
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Multiplication de deux variables
-// modification         : le 19.06.2014
+// modification         : le 03.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Multiplication(char choix_option)
 {
     //--- déclaration de variables ---//
-    int   var1, var2;
+    int   var_i_1, var_i_2;
     float var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
     {
-        var1 = Select_Var_Entier();
-        var2 = Select_Var_Entier();
+        var_i_1 = Select_Var_Entier();
+        var_i_2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("La multiplication vaut X * Y  = %d * %d = %d",var1, var2, (var1 * var2));
+        printf("La multiplication vaut X * Y  = %d * %d = %d",var_i_1, var_i_2, (var_i_1 * var_i_2));
+        PRINT_SAUT_LIGNE;
+        printf("la meme multiplication => X *= Y ou X = X * Y: %d",var_i_1 *= var_i_2);
+        PRINT_SAUT_LIGNE;
     }
     else
     {
@@ -178,23 +187,26 @@ void Multiplication(char choix_option)
 // Nom de la fonction   : Division
 // Entrée / Sortie      : choix_option / - / -
 // Description          : Division de deux variables
-// modification         : le 19.06.2014
+// modification         : le 03.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Division(char choix_option)
 {
     //--- déclaration de variables ---//
-    int     var1, var2;
+    int     var_i_1, var_i_2;
     float   var_f_1, var_f_2;
 
     //--- test selon le choix de l'utilisateur que 2 possibilité ----//
     if(choix_option == CHOIX_ENTIER)
     {
-        var1 = Select_Var_Entier();
-        var2 = Select_Var_Entier();
+        var_i_1 = Select_Var_Entier();
+        var_i_2 = Select_Var_Entier();
         PRINT_SAUT_LIGNE;
         PRINT_SAUT_LIGNE;
-        printf("La division vaut X / Y  = %d / %d = %d",var1, var2, (var1 / var2));
+        printf("La division vaut X / Y  = %d / %d = %d",var_i_1, var_i_2, (var_i_1 / var_i_2));
+        PRINT_SAUT_LIGNE;
+        printf("la meme soustraction => X /= Y ou X = X / Y: %d",var_i_1 /= var_i_2);
+        PRINT_SAUT_LIGNE;
     }
     else
     {
