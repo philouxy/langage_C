@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	19.08.2015
+// Date de modification : 	09.09.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -179,7 +179,7 @@ void Template_Display_Menu_Arithm(char choix_menu)
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe avec les
 //                        differentes options
-// Date modfification   : le 19.06.2015
+// Date modfification   : le 09.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_OP_Simple(char choix_menu)
@@ -214,8 +214,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Addition(choix_option);
+            Addition();
         break;
 
         case('2'):
@@ -223,8 +222,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Soustraction(choix_option);
+            Soustraction();
         break;
 
         case('3'):
@@ -232,8 +230,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Multiplication(choix_option);
+            Multiplication();
         break;
 
         case('4'):
@@ -241,8 +238,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Division(choix_option);
+            Division();
         break;
 
         case('A'):
