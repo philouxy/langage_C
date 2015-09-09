@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: calcul_entier.c
 // Date de création 	: 09.04.2015
-// Date de modification : 03.09.2015
+// Date de modification : 09.09.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -74,161 +74,135 @@ void Astuce_Calcul(void)
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Addition
-// Entrée / Sortie      : choix_option / - / -
-// Description          : Addition de deux variables
-// modification         : le 03.09.2015
+// Entrée / Sortie      : - / - / -
+// Description          : Addition de deux variables + affichage en mode entier en
+//                        flottant
+// modification         : le 09.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Addition(char choix_option)
+void Addition(void)
 {
     //--- déclaration de variables ---//
     int     var_i_1, var_i_2;
     float   var_f_1, var_f_2;
 
-    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
-    if(choix_option == CHOIX_ENTIER)
-    {
-        var_i_1 = Select_Var_Entier();
-        var_i_2 = Select_Var_Entier();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("L'adition entiere vaut X + Y  = %d + %d = %d",var_i_1, var_i_2, (var_i_1 + var_i_2));
-        PRINT_SAUT_LIGNE;
-        printf("la meme addition => X += Y ou X = X + Y: %d",var_i_1 += var_i_2);
-        PRINT_SAUT_LIGNE;
-    }
-    else
-    {
-        var_f_1 = Select_Var_Flottant();
-        var_f_2 = Select_Var_Flottant();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("L'adition flottant vaut X + Y  = %f + %f = %f",var_f_1, var_f_2, (var_f_1 + var_f_2));
-        PRINT_SAUT_LIGNE;
-        printf("en notation scientifique : X + Y  = %4.1e + %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 + var_f_2));
-    }
+    var_f_1 = Select_Var_Flottant();
+    var_f_2 = Select_Var_Flottant();
+    var_i_1 = (int)var_f_1;             //caster une valeur de flottante en valeur entière
+    var_i_2 = (int)var_f_2;             //caster une valeur de flottante en valeur entière
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("adition mode affichage entier :        X + Y  = %d + %d = %d",var_i_1, var_i_2, (var_i_1 + var_i_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme addition - ecriture differente :  X += Y ou X = X + Y: %d",var_i_1 += var_i_2);
+    PRINT_SAUT_LIGNE;
+    printf("adition mode affichage flottant :      X + Y  = %f + %f = %f",var_f_1, var_f_2, (var_f_1 + var_f_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme addition - ecriture differente :  X += Y ou X = X + Y: %f",var_f_1 += var_f_2);
+    //--- réinitialiser la valeur de X ---//
+    var_f_1 -= var_f_2;
+    PRINT_SAUT_LIGNE;
+    printf("adition notation scientifique :        X + Y  = %4.1e + %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 + var_f_2));
 }
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Soustraction
 // Entrée / Sortie      : choix_option / - / -
-// Description          : Soustraction de deux variable
-// modification         : le 03.09.2015
+// Description          : Soustraction de deux variable + affichage en mode entier en
+//                        flottant
+// modification         : le 09.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Soustraction(char choix_option)
+void Soustraction(void)
 {
     //--- déclaration de variables ---//
     int   var_i_1, var_i_2;
     float var_f_1, var_f_2;
 
-    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
-    if(choix_option == CHOIX_ENTIER)
-    {
-        var_i_1 = Select_Var_Entier();
-        var_i_2 = Select_Var_Entier();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("La soustraction vaut X - Y  = %d - %d = %d",var_i_1, var_i_2, (var_i_1 - var_i_2));
-        PRINT_SAUT_LIGNE;
-        printf("la meme soustraction => X -= Y ou X = X - Y: %d",var_i_1 -= var_i_2);
-        PRINT_SAUT_LIGNE;
-    }
-    else
-    {
-        var_f_1 = Select_Var_Flottant();
-        var_f_2 = Select_Var_Flottant();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("La soustraction en flottant vaut X - Y  = %f - %f = %f",var_f_1, var_f_2, (var_f_1 - var_f_2));
-        PRINT_SAUT_LIGNE;
-        printf("en notation scientifique : X - Y  = %4.1e - %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 - var_f_2));
-    }
+    var_f_1 = Select_Var_Flottant();
+    var_f_2 = Select_Var_Flottant();
+    var_i_1 = (int)var_f_1;             //caster une valeur de flottante en valeur entière
+    var_i_2 = (int)var_f_2;             //caster une valeur de flottante en valeur entière
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("soustraction mode affichage entier :      X - Y  = %d - %d = %d",var_i_1, var_i_2, (var_i_1 - var_i_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme soustraction - ecriture differente : X -= Y ou X = X - Y: %d",var_i_1 -= var_i_2);
+    PRINT_SAUT_LIGNE;
+    printf("soustraction mode affichage flottant :    X - Y  = %f - %f = %f",var_f_1, var_f_2, (var_f_1 - var_f_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme soustraction - ecriture differente : X -= Y ou X = X - Y: %f",var_f_1 -= var_f_2);
+    //--- réinitialiser la valeur de X ---//
+    var_f_1 += var_f_2;
+    PRINT_SAUT_LIGNE;
+    printf("sosutraction notation scientifique :      X - Y  = %4.1e - %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 - var_f_2));
 }
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Multiplication
 // Entrée / Sortie      : choix_option / - / -
-// Description          : Multiplication de deux variables
-// modification         : le 03.09.2015
+// Description          : Multiplication de deux variables + affichage en mode entier en
+//                        flottant
+// modification         : le 09.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Multiplication(char choix_option)
+void Multiplication(void)
 {
     //--- déclaration de variables ---//
     int   var_i_1, var_i_2;
     float var_f_1, var_f_2;
 
-    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
-    if(choix_option == CHOIX_ENTIER)
-    {
-        var_i_1 = Select_Var_Entier();
-        var_i_2 = Select_Var_Entier();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("La multiplication vaut X * Y  = %d * %d = %d",var_i_1, var_i_2, (var_i_1 * var_i_2));
-        PRINT_SAUT_LIGNE;
-        printf("la meme multiplication => X *= Y ou X = X * Y: %d",var_i_1 *= var_i_2);
-        PRINT_SAUT_LIGNE;
-    }
-    else
-    {
-        var_f_1 = Select_Var_Flottant();
-        var_f_2 = Select_Var_Flottant();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("La multiplication flottant vaut X * Y  = %f * %f = %f",var_f_1, var_f_2, (var_f_1 * var_f_2));
-        PRINT_SAUT_LIGNE;
-        printf("en notation scientifique : X * Y  = %4.1e * %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 * var_f_2));
-    }
+    var_f_1 = Select_Var_Flottant();
+    var_f_2 = Select_Var_Flottant();
+    var_i_1 = (int)var_f_1;             //caster une valeur de flottante en valeur entière
+    var_i_2 = (int)var_f_2;             //caster une valeur de flottante en valeur entière
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("multiplication mode affichage emtier :      X * Y  = %d * %d = %d",var_i_1, var_i_2, (var_i_1 * var_i_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme multiplication - ecriture differente : X *= Y ou X = X * Y: %d",var_i_1 *= var_i_2);
+    PRINT_SAUT_LIGNE;
+    printf("multiplication en mode affichage flottant : X * Y  = %f * %f = %f",var_f_1, var_f_2, (var_f_1 * var_f_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme multiplication - ecriture differente : X *= Y ou X = X * Y: %f",var_f_1 *= var_f_2);
+    //--- réinitialiser la valeur de X ---//
+    var_f_1 /= var_f_2;
+    PRINT_SAUT_LIGNE;
+    printf("multiplication notation scientifique :      X * Y  = %4.1e * %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 * var_f_2));
 }
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Division
 // Entrée / Sortie      : choix_option / - / -
-// Description          : Division de deux variables
-// modification         : le 03.09.2015
+// Description          : Division de deux variables + affichage en mode entier en
+//                        flottant
+// modification         : le 09.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Division(char choix_option)
+void Division(void)
 {
     //--- déclaration de variables ---//
     int     var_i_1, var_i_2;
     float   var_f_1, var_f_2;
 
-    //--- test selon le choix de l'utilisateur que 2 possibilité ----//
-    if(choix_option == CHOIX_ENTIER)
-    {
-        var_i_1 = Select_Var_Entier();
-        var_i_2 = Select_Var_Entier();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("La division vaut X / Y  = %d / %d = %d",var_i_1, var_i_2, (var_i_1 / var_i_2));
-        PRINT_SAUT_LIGNE;
-        printf("la meme soustraction => X /= Y ou X = X / Y: %d",var_i_1 /= var_i_2);
-        PRINT_SAUT_LIGNE;
-    }
-    else
-    {
-        var_f_1 = Select_Var_Flottant();
-        var_f_2 = Select_Var_Flottant();
-        PRINT_SAUT_LIGNE;
-        PRINT_SAUT_LIGNE;
-        printf("La divsion vaut X / Y  = %f / %f = %f",var_f_1, var_f_2, (var_f_1 / var_f_2));
-        PRINT_SAUT_LIGNE;
-        printf("en notation scientifique : X / Y  = %4.1e / %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 / var_f_2));
-    }
+    var_f_1 = Select_Var_Flottant();
+    var_f_2 = Select_Var_Flottant();
+    var_i_1 = (int)var_f_1;             //caster une valeur de flottante en valeur entière
+    var_i_2 = (int)var_f_2;             //caster une valeur de flottante en valeur entière
+    PRINT_SAUT_LIGNE;
+    PRINT_SAUT_LIGNE;
+    printf("division mode affichage entier :          X / Y  = %d / %d = %d",var_i_1, var_i_2, (var_i_1 / var_i_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme soustraction - ecriture differente : X /= Y ou X = X / Y: %d",var_i_1 /= var_i_2);
+    PRINT_SAUT_LIGNE;
+    printf("divsion mode affichage flottant :         X / Y  = %f / %f = %f",var_f_1, var_f_2, (var_f_1 / var_f_2));
+    PRINT_SAUT_LIGNE;
+    printf("meme soustraction - ecriture differente : X /= Y ou X = X / Y: %f",var_f_1 /= var_f_2);
+    //--- réinitialiser la valeur de X ---//
+    var_f_1 *= var_f_2;
+    PRINT_SAUT_LIGNE;
+    printf("division notation scientifique :          X / Y  = %4.1e / %4.1e = %4.1e",var_f_1, var_f_2, (var_f_1 / var_f_2));
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
