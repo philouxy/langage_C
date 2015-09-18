@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 08.07.2015
+// Date de modification     : 19.08.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -45,6 +45,7 @@
 #define NAME_M_CONV                 "CONVERSIONS"
 #define NAME_M_CONV_CHAR_NUM        "CONVERSION CARACTERE EN NUM (DEC - HEXA)"
 #define NAME_M_CONV_NUM_CHAR        "CONVERSION NUMERIQUE EN CARACTERE"
+#define NAME_M_CONV_NUM_OCT_HEX     "CONVERSION NUMERIQUE EN OCTAL - HEXA"
 #define NAME_M_DIVISION             "DIVISION"
 #define NAME_M_MULTIPLICATION       "MULTIPLICATION"
 #define NAME_M_OP_SIMPLE            "OPERATION SIMPLE"

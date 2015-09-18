@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: conversion.c
 // Date de création 	: 19.06.2015
-// Date de modification : 08.07.2015
+// Date de modification : 19.08.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -31,13 +31,13 @@
 // Entrée / Sortie      : var_char / - / -
 // Description          : avec le choix de l'utilisateur sélectionnant un caractètre
 //                        la fonction affiche sa valeur decimale et hexa
-// modification         : le 08.07.2015
+// modification         : le 29.07.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Conv_Char_Num(char var_char)
 {
     if(var_char < DEBUT_NUM)
-        printf("le caractere selectionne est sepacial", var_char);
+        printf("le caractere selectionne est sepacial");
     else
         printf("le caractere selectionne est '%c'", var_char);
 
@@ -62,6 +62,22 @@ void Conv_Num_Char(int var_int)
     printf("la valeur selectionnee est '%d'", var_int);
     PRINT_SAUT_LIGNE;
     printf("conv en caractere : %c", var_int);
+    PRINT_SAUT_LIGNE;
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Conv_Num_Oct_Hex
+// Entrée / Sortie      : var_int / - / -
+// Description          : avec le choix de l'utilisateur sélectionnant un nombre
+//                        la fonction affiche la valeur en octal et en hexa
+// modification         : le 19.08.2015
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Conv_Num_Oct_Hex(int var_int)
+{
+    printf("la valeur selectionnee est '%d'", var_int);
+    PRINT_SAUT_LIGNE;
+    printf("conv en octal: %o || conv en hexa : %x", var_int, var_int);
     PRINT_SAUT_LIGNE;
 }
 

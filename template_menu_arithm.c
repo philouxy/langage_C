@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_arithm.c
 // Date de création 	:   16.04.2015
-// Date de modification : 	08.07.2015
+// Date de modification : 	09.09.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -84,7 +84,8 @@ void Template_Choix_Menu_Conversion(void)
     PRINT_SAUT_LIGNE;
     printf("[2] %s", NAME_M_CONV_NUM_CHAR);
     PRINT_SAUT_LIGNE;
-    printf("[3] ... \n");
+    printf("[3] %s", NAME_M_CONV_NUM_OCT_HEX);
+    PRINT_SAUT_LIGNE;
     printf("[4] ... \n");
     printf("[A] %s", NAME_M_ASTUCE_CONV_CHAR_NUM);
     PRINT_SAUT_LIGNE;
@@ -178,7 +179,7 @@ void Template_Display_Menu_Arithm(char choix_menu)
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe avec les
 //                        differentes options
-// Date modfification   : le 19.06.2015
+// Date modfification   : le 09.09.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_OP_Simple(char choix_menu)
@@ -213,8 +214,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Addition(choix_option);
+            Addition();
         break;
 
         case('2'):
@@ -222,8 +222,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Soustraction(choix_option);
+            Soustraction();
         break;
 
         case('3'):
@@ -231,8 +230,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Multiplication(choix_option);
+            Multiplication();
         break;
 
         case('4'):
@@ -240,8 +238,7 @@ void Template_Display_Menu_OP_Simple(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            choix_option = Select_Option();
-            Division(choix_option);
+            Division();
         break;
 
         case('A'):
@@ -307,6 +304,15 @@ void Template_Display_Menu_Conversion(char choix_menu)
             PRINT_SAUT_LIGNE;
             choix_int = Select_Var_Entier();
             Conv_Num_Char(choix_int);
+        break;
+
+        case('3'):
+            printf("%s", NAME_M_CONV_NUM_OCT_HEX);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            PRINT_SAUT_LIGNE;
+            choix_int = Select_Var_Entier();
+            Conv_Num_Oct_Hex(choix_int);
         break;
 
         case('A'):
