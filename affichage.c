@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 08.10.2015
+// Date de modification : 09.10.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -95,7 +95,7 @@ void Triangle_Etoile_ADB(void)
 void Triangle_Etoile_AGH(void)
 {
     //--- déclaration de variable interne ---//
-    int c, l;       // c = colonne || l = ligne 
+    int c, l;       // c = colonne || l = ligne
     int val_user;
 
     val_user = Select_Var_Entier();
@@ -113,7 +113,7 @@ void Triangle_Etoile_AGH(void)
 // Nom de la fonction   : Triangle_Etoile_AGH
 // Entrée / Sortie      : - / - /
 // Description          : affiche un triangle rectangle selon le choix du user
-// Date modfification   : le 08.10.2015
+// Date modfification   : le 09.10.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Triangle_Etoile_ADH(void)
@@ -126,12 +126,18 @@ void Triangle_Etoile_ADH(void)
 
     for(l = 0; l < val_user; l++)
     {
-        for(c = l, c_e = val_user; c < val_user ; c++)
+        for(c = l; c >= 0 ; c--)
         {
-            
+            if(c < 1)
+            {
+                for(c_e = l; c_e < val_user; c_e++)
+                    PRINT_ETOILE;
+            }
+            else
+                PRINT_ESPACE;
         }
-            PRINT_ETOILE;
-
         PRINT_SAUT_LIGNE;
     }
 }
+
+// for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
