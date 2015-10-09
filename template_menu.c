@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	30.09.2015
+// Date de modification : 	09.10.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -46,7 +46,7 @@ void Template_Menu_Ligne(void)
 // Nom de la fonction   : Template_Display_Menu
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 30.06.2015
+// Date modfification   : le 09.10.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu(char choix_menu)
@@ -94,6 +94,7 @@ void Template_Display_Menu(char choix_menu)
             Triangle_Etoile_AGH();
             Triangle_Etoile_AGB();
             Triangle_Etoile_ADB();
+            Triangle_Etoile_ADH();
         break;
 
         case 'A':
