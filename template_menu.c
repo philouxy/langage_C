@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	09.10.2015
+// Date de modification : 	06.11.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -46,14 +46,14 @@ void Template_Menu_Ligne(void)
 // Nom de la fonction   : Template_Display_Menu
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe
-// Date modfification   : le 09.10.2015
+// Date modfification   : le 06.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu(char choix_menu)
 {
     //--- déclaration de variable interne ---//
     char i;
-    char var_retour;
+    char car_retour;
 
     //--- boucle pour afficher x caractère sur une ligne ---//
     for(i = 0; i < 3; i++)
@@ -65,24 +65,16 @@ void Template_Display_Menu(char choix_menu)
 
     switch(choix_menu)
     {
-        case 'P':
-            printf("%s", NAME_M_PRINICIPAL);
-            PRINT_SAUT_LIGNE;
-            Template_Menu_Ligne();
-            PRINT_SAUT_LIGNE;
-            Template_Choix_Menu_Principal();
-        break;
-
         case '1':
             printf("%s", NAME_M_ARITHEMTIQUE);
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            Template_Choix_Menu_Arithmetique();
+            Template_Choix_Menu_Arithmetique();             //-> appel un template qui affiche le sous menu arithmétique
             PRINT_SAUT_LIGNE;
             PRINT_SAUT_LIGNE;
-            var_retour = Selection_Menus('M');
-            Template_Display_Menu_Arithm(var_retour);
+            car_retour = Selection_Menus('M');              //-> on indique que l'on veut un caractère en retour
+            Template_Display_Menu_Arithm(car_retour);       //-> affiche le nouveau menu sélectionné
             PRINT_SAUT_LIGNE;
         break;
 
@@ -91,10 +83,7 @@ void Template_Display_Menu(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
-            Triangle_Etoile_AGH();
-            Triangle_Etoile_AGB();
-            Triangle_Etoile_ADB();
-            Triangle_Etoile_ADH();
+            Template_Choix_Menu_Display();                  //-> appel un template qui affiche le sous menu afficahge
         break;
 
         case 'A':
@@ -111,6 +100,14 @@ void Template_Display_Menu(char choix_menu)
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
             Help_Loop();
+        break;
+
+        case 'P':
+            printf("%s", NAME_M_PRINICIPAL);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            PRINT_SAUT_LIGNE;
+            Template_Choix_Menu_Principal();                //-> appel un template qui affiche le menu principale
         break;
 
         default:
