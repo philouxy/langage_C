@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 30.09.2015
+// Date de modification     : 06.11.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -50,6 +50,9 @@
 #define NAME_M_CONV_NUM_CHAR        "CONVERSION NUMERIQUE EN CARACTERE"
 #define NAME_M_CONV_NUM_OCT_HEX     "CONVERSION NUMERIQUE EN OCTAL - HEXA"
 #define NAME_M_DIVISION             "DIVISION"
+#define NAME_M_DISP_CARRE           "AFFICHAGE DE CARRE"
+#define NAME_M_DISP_TRIANGLE        "AFFICHAGE DE TRIANGLE"
+#define NAME_M_DISP_LOSANGE         "AFFICHAGE DE LOSANGE"
 #define NAME_M_MULTIPLICATION       "MULTIPLICATION"
 #define NAME_M_OP_SIMPLE            "OPERATION SIMPLE"
 #define NAME_M_PRINICIPAL           "PRINCIPAL"
@@ -64,8 +67,6 @@ void Template_Menu_Ligne(void);                         //-> affiche un trait d'
 void Template_Display_Menu(char choix_menu);            //-> affiche le titre dans lequel se trouve le user et sélectionne le menu choisi
 void Template_Choix_Menu_Principal(void);               //-> affiche le menu principal pour le user
 
-
-
 //--- liée au fichier template_menu_arithm.c ---//
 void Template_Display_Menu_Arithm(char choix_menu);     //-> affiche le titre dans lequel se trouve le user et sélectionne le menu choisi
 void Template_Choix_Menu_Arithmetique(void);            //-> affiche le menu arithmetique
@@ -73,6 +74,11 @@ void Template_Choix_Menu_OP_Simple(void);               //-> affiche le menu op�
 void Template_Choix_Menu_Conversion(void);              //-> affiche le menu Conversion
 void Template_Display_Menu_OP_Simple(char choix_menu);  //-> affiche le menu concernant les oérations simples
 void Template_Display_Menu_Conversion(char choix_menu); //-> affiche le menu concernant différentes conversions
+
+//--- liée au fichier template_menu_display.c ---//
+void Template_Choix_Menu_Display(void);                 //-> affichage de différents theme du menu display
+void Template_Display_Menu_Display(char choix_menu);    //-> affiche le titre dans lequel se trouve le user et sélectionne le menu choisi
+
 
 //--- liée au fichier selection_user.c ---//
 char Selection_Menus(char choix_selection_msg);         //-> permet de récuprer une valeur entrer par l'utilisateur
@@ -89,6 +95,9 @@ void Help_Loop(void);                                   //-> effect visuel avec 
 void Triangle_Etoile_AGB(void);                         // permet d'afficher un triangle selon les datas du user
 void Triangle_Etoile_AGH(void);
 void Triangle_Etoile_ADB(void);
+void Triangle_Etoile_ADH(void);
+
+
 
 
 #endif // DISPLAY_H_INCLUDED
