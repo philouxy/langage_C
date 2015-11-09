@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu.c
 // Date de création 	:   25.02.2015
-// Date de modification : 	06.11.2015
+// Date de modification : 	09.11.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -84,6 +84,11 @@ void Template_Display_Menu(char choix_menu)
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
             Template_Choix_Menu_Display();                  //-> appel un template qui affiche le sous menu afficahge
+            PRINT_SAUT_LIGNE;
+            PRINT_SAUT_LIGNE;
+            car_retour = Selection_Menus('M');              //-> on indique que l'on veut un caractère en retour
+            Template_Display_Menu_Display(car_retour);      //-> affiche le nouveau menu sélectionné
+            PRINT_SAUT_LIGNE;
         break;
 
         case 'A':
