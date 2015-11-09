@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 09.10.2015
+// Date de modification : 09.11.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -141,3 +141,26 @@ void Triangle_Etoile_ADH(void)
 }
 
 // for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Carre
+// Entrée / Sortie      : - / - /
+// Description          : affiche un carré plein d'étoiles
+// Date modfification   : le 09.11.2015
+// Remarque             : -
+//----------------------------------------------------------------------------------//
+void Carre(int val_user)
+{
+    //--- déclaration de variable ---//
+    int c, l;
+
+    //--- boucle pour afficher chaque ligne ---//
+    for(l = 0; l < val_user; l++)
+    {
+        //--- boucle pour afficher chaque colonne ---//
+        for(c = 0; c < val_user; c++)
+            PRINT_ETOILE;
+
+        PRINT_SAUT_LIGNE;
+    }
+}
