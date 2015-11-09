@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 06.11.2015
+// Date de modification     : 09.11.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -96,6 +96,7 @@ void Triangle_Etoile_AGB(void);                         // permet d'afficher un 
 void Triangle_Etoile_AGH(void);
 void Triangle_Etoile_ADB(void);
 void Triangle_Etoile_ADH(void);
+void Carre(int val_user);                               // afficher un carré plein d'étoiles
 
 
 
