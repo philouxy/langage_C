@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_display.c
 // Date de création 	:   06.11.2015
-// Date de modification : 	09.11.2015
+// Date de modification : 	11.11.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -41,7 +41,8 @@ void Template_Choix_Menu_Display(void)
     PRINT_SAUT_LIGNE;
     printf("[3] %s", NAME_M_DISP_LOSANGE);
     PRINT_SAUT_LIGNE;
-    printf("[4] ... \n");
+    printf("[4] %s", NAME_M_DISP_PARALLELOGRAMME);
+    PRINT_SAUT_LIGNE;
     printf("[P] --- retour menu %s  ---", NAME_M_PRINICIPAL);
     PRINT_SAUT_LIGNE;
     printf("[E] --- fermer le programme ---");
@@ -52,7 +53,7 @@ void Template_Choix_Menu_Display(void)
 // Nom de la fonction   : Template_Display_Menu_Display
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe -> ici display
-// Date modfification   : le 09.11.2015
+// Date modfification   : le 11.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_Display(char choix_menu)
@@ -105,6 +106,16 @@ void Template_Display_Menu_Display(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
+        break;
+
+        case '4':
+            printf("%s", NAME_M_DISP_PARALLELOGRAMME);
+            PRINT_SAUT_LIGNE;
+            Template_Menu_Ligne();
+            PRINT_SAUT_LIGNE;
+            PRINT_SAUT_LIGNE;
+            choix_val = Select_Var_Entier();
+            Parallelogramme_AG(choix_val);
         break;
 
         default:
