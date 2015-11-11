@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 09.11.2015
+// Date de modification : 11.11.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -113,8 +113,8 @@ void Triangle_Etoile_AGH(void)
 // Nom de la fonction   : Triangle_Etoile_AGH
 // Entrée / Sortie      : - / - /
 // Description          : affiche un triangle rectangle selon le choix du user
-// Date modfification   : le 09.10.2015
-// Remarque             : -
+// Date modfification   : le 11.11.2015
+// Remarque             : en commentaire une deuxième variente
 //----------------------------------------------------------------------------------//
 void Triangle_Etoile_ADH(void)
 {
@@ -140,13 +140,26 @@ void Triangle_Etoile_ADH(void)
     }
 }
 
+/* ----------------------------------------------------------------------------------
+--- autre solution pour la boucle interne ---
+for(c = l, c_e = val_user; c_e > 0  ; c_e--){
+    if(c < 1)
+        PRINT_ETOILE;
+    else{
+        PRINT_ESPACE;
+        c--;
+    }
+}
+PRINT_SAUT_LIGNE;
+---------------------------------------------------------------------------------- */
+
 // for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Carre
-// Entrée / Sortie      : - / - /
+// Entrée / Sortie      : val_user / - /
 // Description          : affiche un carré plein d'étoiles
-// Date modfification   : le 09.11.2015
+// Date modfification   : le 10.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Carre(int val_user)
@@ -164,3 +177,68 @@ void Carre(int val_user)
         PRINT_SAUT_LIGNE;
     }
 }
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Parallelogramme_AG
+// Entrée / Sortie      : val_user / - /
+// Description          : affiche un parallelogramme avec l'angle a gauche
+// Date modfification   : le 11.11.2015
+// Remarque             : on lieu de la boucle de deux boucle for imbriquée =>
+//                        utilisation d'une boucle while (externe) et de la boucle
+//                        do ..while pour la boucle (interne)
+//----------------------------------------------------------------------------------//
+void Parallelogramme_AG(int val_user)
+{
+    //--- déclaration de variable interne ---//
+    int c, c_e, l;       // c = colonne || l = ligne || c_e = colonne étoile
+
+    //--- initialisation de variable ---//
+    l = 0;
+
+    //--- gestion du traitement des lignes ---//
+    while(l < val_user)
+    {
+        //--- initialisation de variables pour la 2ème boucle ---//
+        c = l;
+        c_e = (val_user + l);
+
+        //--- gestion des colonnes ---//
+        do
+        {
+           if(c < 1)
+            {
+                PRINT_ETOILE;
+            }
+            else
+            {
+                PRINT_ESPACE;
+                c--;
+            }
+            c_e--;
+        }while(c_e > 0);
+
+        PRINT_SAUT_LIGNE;
+        //--- incrémentation de la ligne ---//
+        l++;
+    }
+}
+
+/* ----------------------------------------------------------------------------------
+--- autre solution mais cette fois avec des boucles for imbriquée ---
+for(l = 0; l < val_user; l++){
+    for(c = l, c_e = (val_user + l); c_e > 0  ; c_e--){
+        if(c < 1)
+            PRINT_ETOILE;
+        else{
+            PRINT_ESPACE;
+            c--;
+        }
+    }
+    PRINT_SAUT_LIGNE;
+}
+---------------------------------------------------------------------------------- */
+
+// for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
+
+
+
