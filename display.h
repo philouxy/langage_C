@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 11.11.2015
+// Date de modification     : 19.11.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -24,9 +24,13 @@
 
 //--- constante ou définition ---//
 #define MAX_CARA                80
+#define CHOIX_BAS               66          // représente B en caractère
+#define CHOIX_DROITE            68          // représente D en caractère
 #define CHOIX_ENTIER            73          // représente I en caractère
 #define CHOIX_EXIT              69          // représente E en caractère
 #define CHOIX_FLOTTANT          70          // représente F en caractère
+#define CHOIX_GAUCHE            71          // représente G en caractère
+#define CHOIX_HAUT              72          // représente H en caractère
 #define CHOIX_MENU              77          // représente M en caractère
 #define CHOIX_MENU_PRINCIPAL    80          // représente P en caractère
 
@@ -37,6 +41,8 @@
 #define PRINT_SELECTION_MENU    printf("Veuillez Selectionner votre Menu : ")
 #define PRINT_SELECTION_CHAR    printf("Veuillez taper un caractere :")
 #define PRINT_SELECTION_CHOIX   printf("Veuillez Selectionner votre choix : ")
+#define PRINT_SELECTION_GD      printf("Veuillez choisir entre Gauche[G] et Droite[D] : ")
+#define PRINT_SELECTION_HB      printf("Veuillez choisir entre Haut[H] et Bas[B] : ")
 #define PRINT_SELECTION_NB      printf("Indiquer un nombre : ")
 #define PRINT_SELECTION_INT     printf("Voulez-vous travailler en entier   - taper 'I' ")
 #define PRINT_SELECTION_FLOAT   printf("Voulez-vous travailler en flottant - taper 'F' ")
@@ -95,12 +101,13 @@ void Help_Printf(void);                                 //-> affiche une aide su
 void Help_Loop(void);                                   //-> effect visuel avec des boucles itératives
 
 //--- liée au fichier affichage.c ---//
-void Triangle_Etoile_AGB(void);                         // permet d'afficher un triangle selon les datas du user
-void Triangle_Etoile_AGH(void);
-void Triangle_Etoile_ADB(void);
-void Triangle_Etoile_ADH(void);
-void Carre(int val_user);                               // afficher un carré plein d'étoiles
-void Parallelogramme_AG(int val_user);                  // affiche un parallelogramme avec l'angle a gauche
+void Triangle_Etoile_AGB(int nb_etoile);                         // permet d'afficher un triangle selon les datas du user
+void Triangle_Etoile_AGH(int nb_etoile);
+void Triangle_Etoile_ADB(int nb_etoile);
+void Triangle_Etoile_ADH(int nb_etoile);
+void Carre(int val_user);                                           // afficher un carré plein d'étoiles
+void Parallelogramme_AG(int val_user);                              // affiche un parallelogramme avec l'angle a gauche
+void Choix_Emplacement_Triangle(char choix_HB, char choix_GD);      // definit quel dessin de traingle afficher selon le user
 
 
 
