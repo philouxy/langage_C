@@ -2,7 +2,7 @@
 // Nom du projet 		:   Langage_C_fixme
 // Nom du fichier 		:   template_menu_display.c
 // Date de création 	:   06.11.2015
-// Date de modification : 	11.11.2015
+// Date de modification : 	19.11.2015
 //
 // Auteur 				: 	Philou (Ph. Bovey)
 //
@@ -53,13 +53,13 @@ void Template_Choix_Menu_Display(void)
 // Nom de la fonction   : Template_Display_Menu_Display
 // Entrée / Sortie      : choix_menu / - /
 // Description          : affiche le menu dans lequel on se situe -> ici display
-// Date modfification   : le 11.11.2015
+// Date modfification   : le 19.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 void Template_Display_Menu_Display(char choix_menu)
 {
     //--- déclaration de variable interne ---//
-    char i;
+    char i, choix_HB, choix_GD;
     int choix_val;
 
     //--- affiche une ligne entière d'étoile ---//
@@ -99,6 +99,12 @@ void Template_Display_Menu_Display(char choix_menu)
             PRINT_SAUT_LIGNE;
             Template_Menu_Ligne();
             PRINT_SAUT_LIGNE;
+            PRINT_SAUT_LIGNE;
+            PRINT_SELECTION_GD;
+            choix_GD = Select_Var_Cara();
+            PRINT_SELECTION_HB;
+            choix_HB = Select_Var_Cara();
+            Choix_Emplacement_Triangle(choix_HB, choix_GD);
         break;
 
         case '3':
