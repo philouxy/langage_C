@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 11.11.2015
+// Date de modification : 19.11.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -28,20 +28,17 @@
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Triangle_Etoile_AGB
-// Entrée / Sortie      : - / - /
+// Entrée / Sortie      : nb_etoile / - /
 // Description          : affiche un triangle rectangle selon le choix du user
-// Date modfification   : le 09.09.2015
+// Date modfification   : le 19.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Triangle_Etoile_AGB(void)
+void Triangle_Etoile_AGB(int nb_etoile)
 {
     //--- déclaration de variable interne ---//
     int c, l;       // c = colonne || l = ligne
-    int val_user;
 
-    val_user = Select_Var_Entier();
-
-    for(l = 0; l < val_user; l++)
+    for(l = 0; l < nb_etoile; l++)
     {
         for(c = 0; c <= l ; c++)
             PRINT_ETOILE;
@@ -53,56 +50,49 @@ void Triangle_Etoile_AGB(void)
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Triangle_Etoile_ADB
-// Entrée / Sortie      : - / - /
+// Entrée / Sortie      : nb_etoile / - /
 // Description          : affiche un triangle rectangle selon le choix du user
-// Date modfification   : le 08.10.2015
+// Date modfification   : le 19.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Triangle_Etoile_ADB(void)
+void Triangle_Etoile_ADB(int nb_etoile)
 {
     //--- déclaration de variable interne ---//
     int c, c_e, l;       // c = colonne || l = ligne || c_e = colonne étoile
-    int val_user;
 
-    val_user = Select_Var_Entier();
-
-    for(l = 0; l < val_user; l++)
+    for(l = 0; l < nb_etoile; l++)
     {
-        for(c = l; c < val_user ; c++)
+        for(c = l; c < nb_etoile ; c++)
         {
-            if (c < (val_user -1))
+            if (c < (nb_etoile -1))
                 PRINT_ESPACE;
             else
             {
-                for(c_e = c; c_e < (val_user + l); c_e++)
+                for(c_e = c; c_e < (nb_etoile + l); c_e++)
                     PRINT_ETOILE;
             }
         }
         PRINT_SAUT_LIGNE;
     }
 }
-
 //for(c_e = c; c_e < (val_user + c); c_e++)
 
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Triangle_Etoile_AGH
-// Entrée / Sortie      : - / - /
+// Entrée / Sortie      : nb_etoile / - /
 // Description          : affiche un triangle rectangle selon le choix du user
-// Date modfification   : le 09.09.2015
+// Date modfification   : le 19.11.2015
 // Remarque             : -
 //----------------------------------------------------------------------------------//
-void Triangle_Etoile_AGH(void)
+void Triangle_Etoile_AGH(int nb_etoile)
 {
     //--- déclaration de variable interne ---//
     int c, l;       // c = colonne || l = ligne
-    int val_user;
 
-    val_user = Select_Var_Entier();
-
-    for(l = 0; l < val_user; l++)
+    for(l = 0; l < nb_etoile; l++)
     {
-        for(c = l; c < val_user ; c++)
+        for(c = l; c < nb_etoile ; c++)
             PRINT_ETOILE;
 
         PRINT_SAUT_LIGNE;
@@ -111,26 +101,23 @@ void Triangle_Etoile_AGH(void)
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Triangle_Etoile_AGH
-// Entrée / Sortie      : - / - /
+// Entrée / Sortie      : nb_etoile / - /
 // Description          : affiche un triangle rectangle selon le choix du user
 // Date modfification   : le 11.11.2015
 // Remarque             : en commentaire une deuxième variente
 //----------------------------------------------------------------------------------//
-void Triangle_Etoile_ADH(void)
+void Triangle_Etoile_ADH(int nb_etoile)
 {
     //--- déclaration de variable interne ---//
     int c, c_e, l;       // c = colonne || l = ligne || c_e = colonne étoile
-    int val_user;
 
-    val_user = Select_Var_Entier();
-
-    for(l = 0; l < val_user; l++)
+    for(l = 0; l < nb_etoile; l++)
     {
         for(c = l; c >= 0 ; c--)
         {
             if(c < 1)
             {
-                for(c_e = l; c_e < val_user; c_e++)
+                for(c_e = l; c_e < nb_etoile; c_e++)
                     PRINT_ETOILE;
             }
             else
@@ -240,5 +227,34 @@ for(l = 0; l < val_user; l++){
 
 // for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
 
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Choix_Emplacement_Triangle
+// Entrée / Sortie      : choix_HB, choix_GD / - /
+// Description          : permet de choisir quel triangle on veut afficher en
+//                        fonction du choix utilisateur
+// Date modfification   : le 19.11.2015
+// Remarque             :
+//----------------------------------------------------------------------------------//
+void Choix_Emplacement_Triangle(char choix_HB, char choix_GD)
+{
+    //--- déclaration de variable ---//
+    int choix_val;
 
+    choix_val = Select_Var_Entier();
+
+    if(choix_HB == CHOIX_HAUT)
+    {
+        if(choix_GD == CHOIX_GAUCHE)
+            Triangle_Etoile_AGH(choix_val);
+        else
+            Triangle_Etoile_ADH(choix_val);
+    }
+    else
+    {
+        if(choix_GD == CHOIX_DROITE)
+            Triangle_Etoile_ADB(choix_val);
+        else
+            Triangle_Etoile_AGB(choix_val);
+    }
+}
 
