@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 19.11.2015
+// Date de modification : 20.11.2015
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -258,3 +258,54 @@ void Choix_Emplacement_Triangle(char choix_HB, char choix_GD)
     }
 }
 
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Losange_Vide
+// Entrée / Sortie      : - / - /
+// Description          : permet d'afficher un "losange" vide
+// Date modfification   : le 20.11.2015
+// Remarque             :
+//----------------------------------------------------------------------------------//
+void Losange_Vide(void)
+{
+    //--- déclaration de variable interne ---//
+    int c_e, c_v, l;       // c_e = colonne etoile || c_v = colonne vide || l = ligne
+    int nb_etoile;
+
+    nb_etoile = Select_Var_Entier();
+
+    //--- Partie supérieur du losange
+    for(l = 0; l < nb_etoile; l++)
+    {
+        //--- premiere partie - ETOILE ---//
+        for(c_e = l; c_e < nb_etoile ; c_e++)
+            PRINT_ETOILE;
+
+        //--- deuxième partie - ESPACE ---//
+        for(c_v = 2 * (nb_etoile - (nb_etoile - l)); c_v > 0; c_v--)
+            PRINT_ESPACE;
+
+         //--- troisième partie - ETOILE ---//
+        for(c_e = (nb_etoile - l); c_e > 0 ; c_e--)
+            PRINT_ETOILE;
+
+        PRINT_SAUT_LIGNE;
+    }
+
+    //--- partie inférieur du losange
+    for(l = 0; l < nb_etoile; l++)
+    {
+        //--- premiere partie - ETOILE ---//
+        for(c_e = 0; c_e <= l ; c_e++)
+            PRINT_ETOILE;
+
+        //--- deuxième partie - ESPACE ---//
+        for(c_v = 2 * (nb_etoile - (l + 1)); c_v > 0; c_v--)
+            PRINT_ESPACE;
+
+        //--- troisième partie - ETOILE ---//
+        for(c_e = nb_etoile - (nb_etoile - l); c_e >= 0; c_e--)
+            PRINT_ETOILE;
+
+        PRINT_SAUT_LIGNE;
+    }
+}
