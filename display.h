@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 19.11.2015
+// Date de modification     : 20.11.2015
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -108,6 +108,7 @@ void Triangle_Etoile_ADH(int nb_etoile);
 void Carre(int val_user);                                           // afficher un carré plein d'étoiles
 void Parallelogramme_AG(int val_user);                              // affiche un parallelogramme avec l'angle a gauche
 void Choix_Emplacement_Triangle(char choix_HB, char choix_GD);      // definit quel dessin de traingle afficher selon le user
+void Losange_Vide(void);                                            // affiche un losange entouré d'étoile
 
 
 
