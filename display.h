@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 20.11.2015
+// Date de modification     : 05.01.2016
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -23,7 +23,6 @@
 //--- librairie associée ---//
 
 //--- constante ou définition ---//
-#define MAX_CARA                80
 #define CHOIX_BAS               66          // représente B en caractère
 #define CHOIX_DROITE            68          // représente D en caractère
 #define CHOIX_ENTIER            73          // représente I en caractère
@@ -33,6 +32,9 @@
 #define CHOIX_HAUT              72          // représente H en caractère
 #define CHOIX_MENU              77          // représente M en caractère
 #define CHOIX_MENU_PRINCIPAL    80          // représente P en caractère
+#define CHOIX_PLEINS            80          // représente P en caractère
+#define CHOIX_VIDE              86          // représente V en caractère
+#define MAX_CARA                80          // largeur d'une fenêtre DOS
 
 #define PRINT_SAUT_LIGNE        printf("\n")
 #define PRINT_ESPACE            printf(" ")
@@ -44,6 +46,7 @@
 #define PRINT_SELECTION_GD      printf("Veuillez choisir entre Gauche[G] et Droite[D] : ")
 #define PRINT_SELECTION_HB      printf("Veuillez choisir entre Haut[H] et Bas[B] : ")
 #define PRINT_SELECTION_NB      printf("Indiquer un nombre : ")
+#define PRINT_SELECTION_PV      printf("Veuillez choisir entre Plein [P] et Vide [V] : ")
 #define PRINT_SELECTION_INT     printf("Voulez-vous travailler en entier   - taper 'I' ")
 #define PRINT_SELECTION_FLOAT   printf("Voulez-vous travailler en flottant - taper 'F' ")
 
@@ -109,8 +112,7 @@ void Carre(int val_user);                                           // afficher 
 void Parallelogramme_AG(int val_user);                              // affiche un parallelogramme avec l'angle a gauche
 void Choix_Emplacement_Triangle(char choix_HB, char choix_GD);      // definit quel dessin de traingle afficher selon le user
 void Losange_Vide(void);                                            // affiche un losange entouré d'étoile
-
-
-
+void Losange_Plein(void);                                           // affiche un losange remplit d'étoile
+void Selection_Losange (char choix_user);                           // selectionne un losange vide ou plein
 
 #endif // DISPLAY_H_INCLUDED
