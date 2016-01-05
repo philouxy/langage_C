@@ -2,12 +2,12 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 20.11.2015
+// Date de modification : 05.01.2016
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
 // Description          : fichier comportant différentes fonctions pour permettre des
-//                        effets visuelles
+//                        effets visuelless
 //
 //
 // Remarques :            lien pour la table ASCII :
@@ -45,7 +45,6 @@ void Triangle_Etoile_AGB(int nb_etoile)
 
         PRINT_SAUT_LIGNE;
     }
-
 }
 
 //----------------------------------------------------------------------------------//
@@ -308,4 +307,72 @@ void Losange_Vide(void)
 
         PRINT_SAUT_LIGNE;
     }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Losange_Plein
+// Entrée / Sortie      : - / - /
+// Description          : permet d'afficher un "losange" plein
+// Date modfification   : le 29.12.2015
+// Remarque             :
+//----------------------------------------------------------------------------------//
+void Losange_Plein(void)
+{
+    //--- déclaration de variable interne ---//
+    int c_e, c_v, l;       // c_e = colonne etoile || c_v = colonne vide || l = ligne
+    int nb_etoile;
+
+    nb_etoile = Select_Var_Entier();
+
+    //--- Partie supérieur du losange
+    for(l = 0; l < nb_etoile; l++)
+    {
+        //--- premiere partie - ETOILE ---//
+        for(c_e = l; c_e < nb_etoile ; c_e++)
+            PRINT_ESPACE;
+
+        //--- deuxième partie - ESPACE ---//
+        for(c_v = 2 * (nb_etoile - (nb_etoile - l)); c_v > 0; c_v--)
+            PRINT_ETOILE;
+
+         //--- troisième partie - ETOILE ---//
+        for(c_e = (nb_etoile - l); c_e > 0 ; c_e--)
+            PRINT_ESPACE;
+
+        PRINT_SAUT_LIGNE;
+    }
+
+    //--- partie inférieur du losange
+    for(l = 0; l < nb_etoile; l++)
+    {
+        //--- premiere partie - ETOILE ---//
+        for(c_e = 0; c_e <= l ; c_e++)
+            PRINT_ESPACE;
+
+        //--- deuxième partie - ESPACE ---//
+        for(c_v = 2 * (nb_etoile - (l + 1)); c_v > 0; c_v--)
+            PRINT_ETOILE;
+
+        //--- troisième partie - ETOILE ---//
+        for(c_e = nb_etoile - (nb_etoile - l); c_e >= 0; c_e--)
+            PRINT_ESPACE;
+
+        PRINT_SAUT_LIGNE;
+    }
+}
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Selection_Losange
+// Entrée / Sortie      : choix_user / - /
+// Description          : permet d'appeler soit la fonction "losange vide" soit la
+//                        fonction "losange plein"
+// Date modfification   : le 05.01.2016
+// Remarque             :
+//----------------------------------------------------------------------------------//
+void Selection_Losange (char choix_user)
+{
+    if(choix_user == CHOIX_PLEINS)
+        Losange_Plein();
+    else
+        Losange_Vide();
 }
