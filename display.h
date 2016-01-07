@@ -2,7 +2,7 @@
 // Nom du projet 		    : Langage_C_fixme
 // Nom du fichier 		    : display.h
 // Date de création 	    : 25.02.2015
-// Date de modification     : 05.01.2016
+// Date de modification     : 07.01.2016
 //
 // Auteur 				    : Philou (Ph. Bovey)
 //
@@ -104,15 +104,17 @@ void Help_Printf(void);                                 //-> affiche une aide su
 void Help_Loop(void);                                   //-> effect visuel avec des boucles itératives
 
 //--- liée au fichier affichage.c ---//
-void Triangle_Etoile_AGB(int nb_etoile);                         // permet d'afficher un triangle selon les datas du user
+void Triangle_Etoile_AGB(int nb_etoile);                            // permet d'afficher un triangle selon les datas du user
 void Triangle_Etoile_AGH(int nb_etoile);
 void Triangle_Etoile_ADB(int nb_etoile);
 void Triangle_Etoile_ADH(int nb_etoile);
 void Carre(int val_user);                                           // afficher un carré plein d'étoiles
 void Parallelogramme_AG(int val_user);                              // affiche un parallelogramme avec l'angle a gauche
+void Parallelogramme_AD(int val_user);                              // affiche un parallelogramme avec l'angle a droite
 void Choix_Emplacement_Triangle(char choix_HB, char choix_GD);      // definit quel dessin de traingle afficher selon le user
 void Losange_Vide(void);                                            // affiche un losange entouré d'étoile
 void Losange_Plein(void);                                           // affiche un losange remplit d'étoile
 void Selection_Losange (char choix_user);                           // selectionne un losange vide ou plein
+void Selection_Sens_Paralelogramme(char choix_user);                // choix pour l'affichage d'un parallelogramme (angle droite ou gauche)
 
 #endif // DISPLAY_H_INCLUDED
