@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: affichage.c
 // Date de création 	: 30.09.2015
-// Date de modification : 05.01.2016
+// Date de modification : 07.01.2016
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -142,6 +142,37 @@ PRINT_SAUT_LIGNE;
 // for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
 
 //----------------------------------------------------------------------------------//
+// Nom de la fonction   : Choix_Emplacement_Triangle
+// Entrée / Sortie      : choix_HB, choix_GD / - /
+// Description          : permet de choisir quel triangle on veut afficher en
+//                        fonction du choix utilisateur
+// Date modfification   : le 19.11.2015
+// Remarque             :
+//----------------------------------------------------------------------------------//
+void Choix_Emplacement_Triangle(char choix_HB, char choix_GD)
+{
+    //--- déclaration de variable ---//
+    int choix_val;
+
+    choix_val = Select_Var_Entier();
+
+    if(choix_HB == CHOIX_HAUT)
+    {
+        if(choix_GD == CHOIX_GAUCHE)
+            Triangle_Etoile_AGH(choix_val);
+        else
+            Triangle_Etoile_ADH(choix_val);
+    }
+    else
+    {
+        if(choix_GD == CHOIX_DROITE)
+            Triangle_Etoile_ADB(choix_val);
+        else
+            Triangle_Etoile_AGB(choix_val);
+    }
+}
+
+//----------------------------------------------------------------------------------//
 // Nom de la fonction   : Carre
 // Entrée / Sortie      : val_user / - /
 // Description          : affiche un carré plein d'étoiles
@@ -226,36 +257,71 @@ for(l = 0; l < val_user; l++){
 
 // for(c = l, c_e = (val_user - c); c_e > 0 ; c_e--, c--)
 
+
 //----------------------------------------------------------------------------------//
-// Nom de la fonction   : Choix_Emplacement_Triangle
-// Entrée / Sortie      : choix_HB, choix_GD / - /
-// Description          : permet de choisir quel triangle on veut afficher en
-//                        fonction du choix utilisateur
-// Date modfification   : le 19.11.2015
-// Remarque             :
+// Nom de la fonction   : Parallelogramme_AD
+// Entrée / Sortie      : val_user / - /
+// Description          : affiche un parallelogramme avec l'angle a droite
+// Date modfification   : le 06.01.2016
+// Remarque             : on lieu de la boucle de deux boucle for imbriquée =>
+//                        utilisation d'une boucle while (externe) et de la boucle
+//                        do ..while pour la boucle (interne)
 //----------------------------------------------------------------------------------//
-void Choix_Emplacement_Triangle(char choix_HB, char choix_GD)
+void Parallelogramme_AD(int val_user)
 {
-    //--- déclaration de variable ---//
-    int choix_val;
+    //--- déclaration de variable interne ---//
+    int c, c_e, l;       // c = colonne || l = ligne || c_e = colonne étoile
 
-    choix_val = Select_Var_Entier();
+    //--- initialisation de variable ---//
+    l = 0;
 
-    if(choix_HB == CHOIX_HAUT)
+    //--- gestion du traitement des lignes ---//
+    while(l < val_user)
     {
-        if(choix_GD == CHOIX_GAUCHE)
-            Triangle_Etoile_AGH(choix_val);
-        else
-            Triangle_Etoile_ADH(choix_val);
-    }
-    else
-    {
-        if(choix_GD == CHOIX_DROITE)
-            Triangle_Etoile_ADB(choix_val);
-        else
-            Triangle_Etoile_AGB(choix_val);
+        //--- initialisation de variables pour la 2ème boucle ---//
+        c = l;
+        c_e = val_user;
+
+        //--- gestion des colonnes ---//
+        do
+        {
+            PRINT_ESPACE;
+            c++;
+        }while(c < val_user);
+
+        for(c_e = 0; c_e < val_user ; c_e++)
+            PRINT_ETOILE;
+
+        PRINT_SAUT_LIGNE;
+        //--- incrémentation de la ligne ---//
+        l++;
     }
 }
+
+//----------------------------------------------------------------------------------//
+// Nom de la fonction   : Selection_Sens_Paralelogramme
+// Entrée / Sortie      : choix_user / - /
+// Description          : permet de choisir entre la direction de l'angle d'un
+//                        parallelogramme
+// Date modfification   : le 07.01.2016
+// Remarque             :
+//----------------------------------------------------------------------------------//
+void Selection_Sens_Paralelogramme(char choix_user)
+{
+    //--- déclaration de variables ---//
+    int val_user;
+
+    //--- choix du nb d'étoile à afficher dans le parallélogramme ---//
+    val_user = Select_Var_Entier();
+
+
+    if(choix_user == CHOIX_GAUCHE)
+        Parallelogramme_AG(val_user);
+    else
+        Parallelogramme_AD(val_user);
+}
+
+
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Losange_Vide
