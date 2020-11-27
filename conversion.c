@@ -2,12 +2,11 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: conversion.c
 // Date de création 	: 19.06.2015
-// Date de modification : 02.09.2019
+// Date de modification : 27.11.2020
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
 // Description          : fichier comportant différentes fonctions de conversions
-//
 //
 // Remarques :            lien pour la table ASCII :
 // 						  -> http://www.asciitable.com/
@@ -25,7 +24,6 @@
 //--- librairie perso ---//
 #include "arithmetique.h"
 #include "display.h"
-
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : Conv_Char_Num
@@ -122,9 +120,9 @@ void Astuce_ASCII(void)
 
 //----------------------------------------------------------------------------------//
 // Nom de la fonction   : ConvDeciBinaire
-// Entrée / Sortie      : valDecimal / - / -
+// Entrée / Sortie      : valNum / - / -
 // Description          : affiche la valeur binaire d'une valeur donnée ou flottante
-// modification         : le 02.09.2019
+// modification         : le 27.11.2020
 // Remarque             : https://fr.wikiversity.org/wiki/Introduction_au_langage_C/Types
 //----------------------------------------------------------------------------------//
 void ConvDeciBinaire(float valNum)
@@ -133,7 +131,7 @@ void ConvDeciBinaire(float valNum)
 	float partieFractionnee; 
 
 	int	partieEntiere; 
-	int8_t iteration, iterationEntier = 0, iterationFractionnee = 0; 
+	int8_t iteration, iterationEntier = 0, iterationFractionnee = 0, depassement = 0; 
 	int8_t tbBinaire[TAILLE_TB_BINAIRE];
 
 	//-- séparartion de la partie entière à la partie fractionnée --//
@@ -161,26 +159,36 @@ void ConvDeciBinaire(float valNum)
 	//-- boucle multipliant par 2 la fraction jusqu'à obtenir une valeur égale à 0 --// 
 	do 
 	{
+		//-- MAJ de la partie fractionnée => recherche du 0 et du 1 binaire fractionner (x 2) --//
+		partieFractionnee *= VAL_NUM_2_0;
+
 		//-- calcul pour la conversion en binaire --// 
-		tbBinaire[iterationFractionnee] = (partieFractionnee * VAL_NUM_2_0);	// cast implicte en entier pour l'enregistrement dans le tableau 
-		partieFractionnee *= VAL_NUM_2_0; 
+		tbBinaire[iterationFractionnee] = partieFractionnee;	// cast implicte en entier pour l'enregistrement dans le tableau 
+		
+		//-- traitement si valeur fractionnée > que 1.0 --//
+		if (partieFractionnee >= 1.0)
+			partieFractionnee -= 1.0; 
 
 		//-- MAJ itération --//
 		iterationFractionnee++; 
 
-	} while (partieFractionnee <= 1.0); 
+		//-- test si la divsion binaire dure plus 5 itérations --//
+		if ((iterationFractionnee - iterationEntier) > 5)
+			depassement = 1; 
 
+	} while (/*(partieFractionnee < 1.0) ||*/ (partieFractionnee != 0.0) && (depassement != 1)); // || (partieFractionnee != 0.0)));
 
 	//-- affichage du tableau pour la partie entière--//
 	printf("la valeur binaire est de 0b "); 
+
 	for (iterationEntier -= 1 ; iterationEntier >= 0; iterationEntier--)
 		printf("%d", tbBinaire[iterationEntier]); 
 	
 	//-- affichage du point de séparation --// 
 	printf("."); 
 
-	//-- affichage de la partie fractionnée 
-	for(; iteration < (iterationFractionnee - 1); iteration++)
+	//-- affichage de la partie fractionnée --// 
+	for(; iteration < iterationFractionnee ; iteration++)
 		printf("%d", tbBinaire[iteration]);
 
 	PRINT_SAUT_LIGNE; 
