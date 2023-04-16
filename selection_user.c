@@ -2,7 +2,7 @@
 // Nom du projet 		: Langage_C_fixme
 // Nom du fichier 		: selection_user.c
 // Date de création 	: 16.04.2015
-// Date de modification : 17.03.2019
+// Date de modification : 16.04.2023
 //
 // Auteur 				: Philou (Ph. Bovey)
 //
@@ -32,16 +32,20 @@
 
 
 //----------------------------------------------------------------------------------//
-// Nom de la fonction   : Selection_Menus
-// Entrée / Sortie      : choix_selection_msg / var_retour
-// Description          : affiche un message pour que l'utilisateur entre une valeur
-//                        M : affichage d'un message concernant un menu
-//                        C : affichage d'un message concernant un choix de sous menu
-//                        V : affichage d'un message concernant une valeur
-// modification         : le 23.10.2017
-// Remarque             : -
+// Nom de la fonction           : Selection_Menus
+// Entrée / Sortie / reférence  : e_selectionMSG / char /
+// Description                  : affiche un message pour que l'utilisateur
+//                                entre une valeur
+//                              > select_menu       : affichage d'un message
+//                                                    concernant un menu
+//                              > select_sousMenu   : affichage d'un message
+//                                                    concernant un sous menu
+//                              > select_valeur     : affichage d'un message
+//                                                    concernant une valeur
+// modification                 : le 16.04.2023
+// Remarque                     : -
 //----------------------------------------------------------------------------------//
-char Selection_Menus(char choix_selection_msg)
+char Selection_Menus(e_selectionMSG choix_selection_msg)
 {
     //--- declaration de variable local ---//
     char var_retour;
@@ -49,17 +53,17 @@ char Selection_Menus(char choix_selection_msg)
     //--- selection du message selon la configuration ---//
     switch(choix_selection_msg)
     {
-        case 'M':
+        case select_menu:
             PRINT_SELECTION_MENU;
             var_retour = Select_Var_Cara();
         break;
 
-        case 'C':
+        case select_sousMenu:
             PRINT_SELECTION_CHOIX;
             var_retour = Select_Var_Cara();
         break;
 
-        case 'V':
+        case select_valeur:
             var_retour = Select_Var_Entier(LIMITE_NB_MAX, LIMITE_NB_MIN);
         break;
     }
@@ -142,7 +146,7 @@ int Select_Var_Entier(int limiteMax, int limiteMin)
 	int val_retour;
 
     //--- message de sélection ---//
-    PRINT_SELECTION_NB;
+    PRINT_SELECTION_INT_LIMIT;
 
 	//-- boucle pour tester si valeur est correctes ou non --//
 	do
@@ -186,7 +190,7 @@ int SelectValEntierSansLimite(void)
     //--- fonction pour la lire la saisie d'un chaîne de caractère ---//
     //-- pour VS --
 	#ifdef VISUAL_STUDIO
-        scanf_s("%d", &val_retour);
+        scanf_s("%d", &valRetour);
     #else
         scanf("%d", &valRetour);
     #endif // VISUAL_STUDIO
@@ -226,7 +230,7 @@ float Select_Var_Flottant(void)
 // Entrée / Sortie      : limiteMax, limiteMin / val_retour
 // Description          : récuperation d'une chaîne de caractère en la transformant
 //                        en flottant avec contrôle de limite
-// modification         : le 17.03.2019
+// modification         : le 31.03.2019
 // Remarque             : -
 //----------------------------------------------------------------------------------//
 float SelectValFlottantAvecLimite(float limitMax, float limitMin)
@@ -244,7 +248,7 @@ float SelectValFlottantAvecLimite(float limitMax, float limitMin)
 		//--- fonction pour la lire la saisie d'un chaîne de caractère ---//
 		//-- pour VS --
 		#ifdef VISUAL_STUDIO
-            scanf_s("%d", &val_retour);
+            scanf_s("%d", &valRetour);
         #else
             scanf("%f", &valRetour);
         #endif // VISUAL_STUDIO
